@@ -238,7 +238,7 @@
   background:white;
   color:black;
   padding: 80px 20px;
-  min-height: 100vh;
+  min-height: auto;
   scroll-margin-top: 80px;
 }
 
@@ -322,4 +322,20 @@
 
 .faqItem:hover {
   border-color:black;
+}
+
+@media (max-width: 768px) {
+  .faqWrapper {
+    padding: 48px 16px 24px;
+  }
+
+  .subtitle {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqWrapper {
+    padding: 38px 12px 18px;
+  }
 }

@@ -111,7 +111,7 @@
 
 @media (max-width: 768px) {
   .sixthWrapper {
-    padding: 60px 20px;
+    padding: 42px 16px 24px;
   }
 
   .headerSection .title {
@@ -120,5 +120,11 @@
 
   .gridContainer {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sixthWrapper {
+    padding: 34px 12px 18px;
   }
 }

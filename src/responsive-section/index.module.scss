@@ -105,6 +105,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
@@ -126,12 +127,13 @@
 }
 
 @media (max-width: 1024px) {
-  .wrapper { padding: 80px 40px; }
+  .wrapper { padding: 72px 32px 36px; }
   .container { gap: 40px; }
   .contentSection h2 { font-size: 46px; }
 }
 
 @media (max-width: 768px) {
+  .wrapper { padding: 52px 20px 26px; }
   .container { flex-direction: column; text-align: center; gap: 60px; }
   .imageSection { order: 1; img { max-width: 100%; } }
   .contentSection { 
@@ -139,4 +141,8 @@
     ul li { justify-content: center; text-align: left; }
   }
   .contentSection h2 { font-size: 38px; }
+}
+
+@media (max-width: 480px) {
+  .wrapper { padding: 40px 14px 20px; }
 }

@@ -168,10 +168,10 @@ function Clients() {
   const logos = allSets[currentSet];
 
   return (
-    <div id="documentation" className={`${style.wrapper} d-flex flex-column justify-content-between p-5`} data-aos="flip-left"
+    <div id="documentation" className={style.wrapper} data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" data-aos-delay="1000">
-      <h1 className="text-bold" style={{ fontWeight: "800" }}>OUR CLIENTS</h1>
+     data-aos-duration="850" data-aos-delay="350">
+      <h1 className={style.sectionTitle}>OUR CLIENTS</h1>
       <div
         className={style.orbitContainer}
         style={{
