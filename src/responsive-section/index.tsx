@@ -5,7 +5,7 @@ const ResponsiveSection = () => {
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.imageSection} data-aos="flip-right" data-aos-delay="1000">
-          <img src="public/LED.png" alt="Devices Preview" />
+          <img src="/LED.png" alt="Devices Preview" />
         </div>
         <div className={styles.contentSection} data-aos="zoom-out-left" data-aos-delay="1500">
           <h2>

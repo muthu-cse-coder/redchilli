@@ -165,7 +165,7 @@ const FixthPage: FunctionComponent = () => {
                     data-aos-offset="900">
                     {/* Make sure to use the high-quality white-background truck image here */}
                     {/* <img src="public/Gemini_Generated_Image_ji4d7eji4d7eji4d.png" alt="RedChilly LED Advertising Truck" /> */}
-                   <img src="public/93560a11-9928-4426-ab0c-3650b09fdaf8.jfif" alt="" />
+                   <img src="/93560a11-9928-4426-ab0c-3650b09fdaf8.jfif" alt="" />
 
                 </div>
             </div>
