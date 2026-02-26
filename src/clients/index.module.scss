@@ -1,0 +1,302 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: white;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+h1{
+  font-weight: 800;
+}
+.orbitContainer {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  will-change: transform;
+}
+
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2.5px dashed black;
+}
+
+.ring1 { 
+  width: 300px; 
+  height: 300px; 
+  animation: spinSlow 28s linear infinite;
+}
+
+.ring2 { 
+  width: 510px; 
+  height: 510px; 
+  animation: spinReverse 40s linear infinite;
+}
+
+.ring3 { 
+  width: 730px; 
+  height: 730px; 
+  animation: spinSlow 65s linear infinite;
+}
+
+
+
+.centerText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: red;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  z-index: 20;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+
+
+.logoWrapper {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+
+  &.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backface-visibility: hidden;
+
+    animation:
+      floatLogo 3s ease-in-out infinite,
+      glowPulse 4s ease-in-out infinite;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    }
+  }
+}
+
+
+// @keyframes floatLogo {
+//   0%   { transform: translateY(0px); }
+//   50%  { transform: translateY(-6px); }
+//   100% { transform: translateY(0px); }
+// }
+
+
+// @keyframes glowPulse {
+//   0%   { box-shadow: 0 0 0px rgba(255,0,0,0.3); }
+//   50%  { box-shadow: 0 0 18px rgba(255,0,0,0.7); }
+//   100% { box-shadow: 0 0 0px rgba(255,0,0,0.3); }
+// }
+
+
+// @keyframes breathe {
+//   0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+//   50%  { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+//   100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+// }
+
+// @keyframes orbitMove {
+//   from {
+//     transform: rotate(0deg) translate(var(--radius)) rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg) translate(var(--radius)) rotate(-360deg);
+//   }
+// }
+
+
+
+// @media (max-width: 992px) {
+//   .orbitContainer {
+//     width: 600px;
+//     height: 600px;
+//   }
+
+//   .ring1 { width: 300px; height: 300px; }
+//   .ring2 { width: 510px; height: 510px; }
+//   .ring3 { width: 730px; height: 730px; }
+// }
+
+// @media (max-width: 600px) {
+//   .orbitContainer {
+//     width: 400px;
+//     height: 400px;
+//   }
+
+//   .ring1 { width: 150px; height: 150px; }
+//   .ring2 { width: 260px; height: 260px; }
+//   .ring3 { width: 360px; height: 360px; }
+
+//   .logoWrapper {
+//     width: 55px;
+//     height: 55px;
+// animation:orbitMove 12s linear infinite;
+//     img {
+//       width: 50px;
+//       height: 50px;
+//     }
+//   }
+
+//   .centerText {
+//     font-size: 1.2rem;
+//   }
+// }
+/* --- Tablets (992px and below) --- */
+/* --- Tablets (992px and below) --- */
+@media (max-width: 992px) {
+  .orbitContainer {
+    width: 550px;
+    height: 550px;
+  }
+
+  /* Ring sizes reduced to keep the "Our Clients" text centered */
+  .ring1 { width: 220px; height: 220px; }
+  .ring2 { width: 380px; height: 380px; }
+  .ring3 { width: 540px; height: 540px; }
+
+  .logoWrapper {
+    width: 60px;
+    height: 60px;
+    img {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  .centerText {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- Mobile Phones (600px and below) --- */
+@media (max-width: 600px) {
+  .orbitContainer {
+    width: 320px;
+    height: 320px;
+  }
+
+  /* Ring sizes reduced to fit within mobile screen width */
+  .ring1 { width: 120px; height: 120px; }
+  .ring2 { width: 210px; height: 210px; }
+  .ring3 { width: 300px; height: 300px; }
+
+  .logoWrapper {
+    width: 45px;
+    height: 45px;
+    
+    img {
+      width: 40px;
+      height: 40px;
+      padding: 5px; 
+    }
+  }
+
+  .centerText {
+    font-size: 1.1rem; /* Smaller text for mobile screens */
+    letter-spacing: 1px;
+  }
+}
+
+/* --- Very Small Devices (Under 380px) --- */
+@media (max-width: 380px) {
+  .orbitContainer {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ring1 { width: 100px; height: 100px; }
+  .ring2 { width: 180px; height: 180px; }
+  .ring3 { width: 260px; height: 260px; }
+}
+// @media (max-width: 992px) {
+//   .orbitContainer {
+//     width: 550px;
+//     height: 550px;
+//   }
+
+//   .ring1 { width: 220px; height: 220px; }
+//   .ring2 { width: 380px; height: 380px; }
+//   .ring3 { width: 540px; height: 540px; }
+
+//   .logoWrapper {
+//     width: 60px;
+//     height: 60px;
+//     img {
+//       width: 55px;
+//       height: 55px;
+//     }
+//   }
+
+//   .centerText {
+//     font-size: 1.5rem;
+//   }
+// }
+
+// /* --- Mobile Phones (600px and below) --- */
+// @media (max-width: 600px) {
+//   .orbitContainer {
+//     width: 320px;
+//     height: 320px;
+//   }
+
+//   /* Ring sizes reduced to fit within mobile width */
+//   .ring1 { width: 120px; height: 120px; }
+//   .ring2 { width: 210px; height: 210px; }
+//   .ring3 { width: 300px; height: 300px; }
+
+//   .logoWrapper {
+//     width: 45px;
+//     height: 45px;
+    
+//     img {
+//       width: 40px;
+//       height: 40px;
+//       padding: 5px; /* Reduced padding for smaller screens */
+//     }
+//   }
+
+//   .centerText {
+//     font-size: 1rem; /* Smaller text for mobile */
+//     letter-spacing: 1px;
+//   }
+// }
+
+// /* --- Small Mobile (380px and below) --- */
+// @media (max-width: 380px) {
+//   .orbitContainer {
+//     width: 280px;
+//     height: 280px;
+//   }
+
+//   .ring1 { width: 100px; height: 100px; }
+//   .ring2 { width: 180px; height: 180px; }
+//   .ring3 { width: 260px; height: 260px; }
+// }
