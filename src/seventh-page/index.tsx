@@ -96,7 +96,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Mobile-LED-Screen-Trailer-Rental.jpg", 
       tag: "Mobile Ads",
       animation: "fade-right",
-      offset: "420"
+      // offset: "420"
     },
     {
       title: "Indoor LED Wall Rental",
@@ -104,7 +104,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_btj126btj126btj1.png",
       tag: "Events",
       animation: "fade-left",
-      offset: "420"
+      // offset: "420"
     },
     {
       title: "Outdoor LED Installation",
@@ -112,7 +112,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_r5qi0xr5qi0xr5qi.png",
       tag: "Permanent",
       animation: "fade-up",
-      offset: "420"
+      // offset: "420"
     },
     {
       title: "Event Display Solutions",
@@ -120,7 +120,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_80ef5e80ef5e80ef.png",
       tag: "Exhibitions",
       animation: "fade-up",
-      offset: "420"
+      // offset: "420"
     }
   ];
 
@@ -139,7 +139,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
               key={index} 
               className={styles.itemCard}
               data-aos={item.animation} 
-              data-aos-offset={item.offset}
+              // data-aos-offset={item.offset}
             >
               <div className={styles.imageBox}>
                 <img src={item.image} alt={item.title} />

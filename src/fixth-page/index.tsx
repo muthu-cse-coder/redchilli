@@ -149,7 +149,7 @@ const FixthPage: FunctionComponent = () => {
         <div className={style.stFixthWrapper}>
             <div className={style.stRowWrapper}>
                  
-                <div className={style.stFristColumnWrapper} data-aos="fade-up-right" data-aos-offset="420" data-aos-duration="900">
+                <div className={style.stFristColumnWrapper} data-aos="fade-up-right" data-aos-offset="0" data-aos-duration="900">
                     <h2>RedChilli LED Truck Advertising</h2>
                     <ul>
                         <li>360-degree visibility across cities and crowded locations.</li>
@@ -162,7 +162,7 @@ const FixthPage: FunctionComponent = () => {
 
                 <div className={style.stSecondColumnWrapper}
                     data-aos="fade-left"
-                    data-aos-offset="420"
+                    // data-aos-offset="420"
                     data-aos-duration="900">
                     {/* Make sure to use the high-quality white-background truck image here */}
                     {/* <img src="public/Gemini_Generated_Image_ji4d7eji4d7eji4d.png" alt="RedChilly LED Advertising Truck" /> */}
