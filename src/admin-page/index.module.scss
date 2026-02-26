@@ -261,3 +261,19 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .stImageContainer {
+    height: auto;
+    position: relative;
+    top: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .stImageContainer .stTruckImg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
