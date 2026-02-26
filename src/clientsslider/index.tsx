@@ -76,7 +76,7 @@ const clients = [
 ];
 
 const ClientsCircle = () => {
-  const radius = 140; 
+  const radius = 140; 3
   const centerX = 150;
   const centerY = 150;
 

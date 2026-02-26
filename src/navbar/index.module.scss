@@ -1,229 +1,195 @@
-// .stNavBarWrapper {
-//     background-color: black;
-//     display: flex;
-//     align-items: center;
-//     padding: 40px 40px;
-//     height: 60px;
-//     color: white;
-//     font-family: Arial, sans-serif;
-//     justify-content: space-between;
-//     // position: sticky; // Or fixed
-//     // top: 0;
-//     // z-index: 800;
-
-//     .stNavbarLogo {
-//         display: flex;
-//         align-items: center;
-//         cursor: pointer;
-
-//         .stNavLogoCircle {
-//             img {
-//                 background-color: red;
-//                 color: black;
-//                 font-weight: bold;
-//                 font-size: 24px;
-//                 // width: 38px;
-//                 width: 60px;
-//                 height: 80px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 justify-content: center;
-//                 align-items: center;
-//                 margin-right: 10px;
-//                 user-select: none;
-//             }
-//         }
-
-//         .stlogoText {
-//             font-size: 20px;
-//             font-weight: 600;
-//         }
-//     }
-
-//     .stNavBarLinks {
-//         list-style: none;
-//         display: flex;
-//         gap: 30px;
-
-//         li {
-//             position: relative;
-
-//             a {
-//                 color: white;
-//                 text-decoration: none;
-//                 font-weight: 500;
-//                 font-size: 16px;
-//                 padding: 5px 0;
-//                 user-select: none;
-
-//                 &:hover {
-//                     color: red;
-//                 }
-//             }
-
-//             &:not(:last-child)::after {
-//                 content: "•";
-//                 color: red;
-//                 position: absolute;
-//                 right: -15px;
-//                 top: 50%;
-//                 transform: translateY(-50%);
-//                 font-weight: bold;
-//                 user-select: none;
-//             }
-//         }
-//     }
-
-//     .stPurchaseButton {
-//         background-color: red;
-//         border: none;
-//         border-radius: 30px;
-//         color: white;
-//         font-weight: 600;
-//         padding: 10px 25px;
-//         font-size: 16px;
-//         cursor: pointer;
-//         display: flex;
-//         align-items: center;
-//         gap: 8px;
-
-//         .arrow {
-//             font-size: 18px;
-//             user-select: none;
-//         }
-
-//         &:hover {
-//             background-color: black;
-//             color: red;
-//             border: 1px solid;
-//             border-color: red;
-
-//             span {
-//                 transform: translateX(10px);
-//                 color: red;
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (max-width:426px) {
-//     .stNavBarWrapper {
-//         display: none;
-//     }
-// }
 .stNavBarWrapper {
-    background-color: black;
+    background-color: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 40px;
-    height: 70px;
-    color: white;
-    font-family: 'Arial', sans-serif;
+    min-height: 72px;
+    padding: 10px 36px;
     position: sticky;
     top: 0;
-    z-index: 9999; // Stacking problem varaama irukka high z-index
     width: 100%;
+    z-index: 9999;
+}
 
-    .stNavbarLogo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-
-        .stNavLogoCircle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .stlogoText {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            margin-left: 10px;
-        }
-    }
-
-    .stNavBarLinks {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-        margin: 0;
-        padding: 0;
-
-        li {
-            a {
-                color: white;
-                text-decoration: none;
-                font-size: 16px;
-                font-weight: 500;
-                transition: color 0.3s ease;
-
-                &:hover {
-                    color: #ff0000; // Red Chilly color hover effect
-                }
-            }
-        }
-    }
-
-    .stPurchaseButton {
-        background-color: #ff0000; // Red button as per screenshot
-        color: white;
-        border: none;
-        padding: 10px 25px;
-        border-radius: 30px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.3s ease;
-
-        &:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
-        }
-
-        svg {
-            display: flex;
-            align-items: center;
-        }
-    }
+.stNavbarLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logoCircle {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #ff0000;
+    flex-shrink: 0;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
 }
 
-span {
-    font-size: 1.8rem;
+.stlogoText {
+    color: #fff;
+    font-size: 1.7rem;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    line-height: 1;
 }
 
-// Mobile Responsive
-@media (max-width: 992px) {
-    .stNavBarLinks {
-        display: none; // Mobile-la links hide panna (or burger menu add panna)
+.stNavBarLinks {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+
+    a {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #ff4b4b;
+        }
+    }
+}
+
+.stPurchaseButton,
+.stMobilePurchaseButton {
+    background-color: #ff0000;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+        background-color: #cc0000;
+        transform: translateY(-1px);
+    }
+
+    span {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+.stHamburgerButton {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #ff0000;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+}
+
+.stHamburgerOpen {
+    span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+        opacity: 0;
+    }
+
+    span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+.stMobileMenu {
+    display: none;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: calc(100% + 10px);
+    background-color: #101010;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    padding: 16px;
+}
+
+.stMobileNavLinks {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+        &:hover {
+            color: #ff4b4b;
+        }
+    }
+}
+
+.stMobilePurchaseButton {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .stNavBarWrapper {
+        padding: 10px 16px;
+    }
+
+    .stNavBarLinks,
+    .stPurchaseButton {
+        display: none;
+    }
+
+    .stHamburgerButton {
+        display: inline-flex;
+    }
+
+    .stMobileMenu {
+        display: block;
+    }
+
+    .stlogoText {
+        font-size: 1.3rem;
+    }
+
+    .logoCircle {
+        width: 40px;
+        height: 40px;
     }
 }

@@ -364,6 +364,7 @@ justify-content: end;
     margin-left: 10px;
     transition: transform 0.3s ease;
   }
+  
 }
 
 .stSecondButtonWrapper {
@@ -408,6 +409,12 @@ justify-content: end;
   }
 }
 
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .stRightSideWrapper {
   display: flex;
   justify-content: flex-end;
@@ -426,11 +433,56 @@ justify-content: end;
   .mainHeading { font-size: 2.8rem; .highlight { font-size: 2.2rem; } }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .stSeconPageWrapper {
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .stLeftSideWrapper {
+    align-items: center;
+  }
+
+  .subHeading {
+    margin: 0 auto;
+  }
+
+  .featureList li {
+    justify-content: center;
+  }
+
+  .ctaButtons {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .statsContainer {
+    justify-content: center;
+  }
+
+  .stRightSideWrapper {
+    justify-content: center;
+    margin-top: 35px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .stSeconPageWrapper { padding: 50px 20px; text-align: center; }
   .stLeftSideWrapper { align-items: center; }
   .mainHeading { font-size: 2rem; .highlight { font-size: 1.8rem; } .firstLine { white-space: normal; } }
+  .subHeading { margin: 0 auto; }
+  .featureList li { justify-content: center; }
   .statsContainer { gap: 20px; justify-content: center; }
   .stRightSideWrapper { justify-content: center; margin-top: 40px; }
-  :global(.d-flex.gap-4) { flex-direction: column; width: 100%; }
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .stButtonWrapper,
+  .stSecondButtonWrapper {
+    width: min(320px, 100%);
+    justify-content: center;
+  }
 }
