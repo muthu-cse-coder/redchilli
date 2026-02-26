@@ -238,7 +238,7 @@ const ThirdPage: FunctionComponent = () => {
                     <div
                         className={styles.timelineItem}
                         key={index}
-                        style={{ transitionDelay: `${index * 0.15}s` }}
+                        style={{ transitionDelay: `${index * 0.05}s` }}
                     >
                         <div className={styles.year}>{item.year}</div>
 

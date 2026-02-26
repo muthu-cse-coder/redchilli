@@ -212,7 +212,7 @@ const FaqPage = () => {
           Your Brand. On The Move.
         </p>
 
-        <div className={styles.faqList} data-aos="flip-right"data-aos-delay="1000">
+        <div className={styles.faqList} data-aos="flip-right"data-aos-delay="500">
           {faqData.map((faq, index) => (
             <div
               key={index}

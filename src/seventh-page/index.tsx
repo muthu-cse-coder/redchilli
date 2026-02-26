@@ -86,7 +86,7 @@ interface SeventhPageProps {}
 const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
   useEffect(() => {
     // Duration and once setting for global feel
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 900, once: true });
   }, []);
 
   const services = [
@@ -96,7 +96,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Mobile-LED-Screen-Trailer-Rental.jpg", 
       tag: "Mobile Ads",
       animation: "fade-right",
-      offset: "900"
+      offset: "500"
     },
     {
       title: "Indoor LED Wall Rental",
@@ -104,7 +104,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_btj126btj126btj1.png",
       tag: "Events",
       animation: "fade-left",
-      offset: "1000"
+      offset: "500"
     },
     {
       title: "Outdoor LED Installation",
@@ -112,7 +112,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_r5qi0xr5qi0xr5qi.png",
       tag: "Permanent",
       animation: "fade-up",
-      offset: "1000"
+      offset: "500"
     },
     {
       title: "Event Display Solutions",
@@ -120,7 +120,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       image: "/Gemini_Generated_Image_80ef5e80ef5e80ef.png",
       tag: "Exhibitions",
       animation: "fade-up",
-      offset: "1000"
+      offset: "500"
     }
   ];
 

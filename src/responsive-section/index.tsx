@@ -4,10 +4,10 @@ const ResponsiveSection = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.imageSection} data-aos="flip-right" data-aos-delay="1000">
+        <div className={styles.imageSection} data-aos="flip-right" data-aos-delay="500">
           <img src="/LED.png" alt="Devices Preview" />
         </div>
-        <div className={styles.contentSection} data-aos="zoom-out-left" data-aos-delay="1500">
+        <div className={styles.contentSection} data-aos="zoom-out-left" data-aos-delay="500">
           <h2>
             LED Wall Display Solutions 
           </h2>
