@@ -26,6 +26,7 @@
   justify-content: space-between;
   gap: 80px;
   z-index: 1;
+  
 }
 
 .imageSection {
@@ -37,7 +38,7 @@
   img {
     width: 100%;
     max-width: 600px;
-    height: auto;
+    height: 100%;
     border-radius: 20px;
     transition: all 0.5s ease;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
@@ -49,49 +50,63 @@
   }
 }
 
-.contentSection {
-  flex: 1;
+.contentSection  {
+    flex: 1.2;
 
-  h2 {
-    font-size: 58px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #1a1a1a 30%, #ff0000 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 45px;
-
-    li {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555555; 
-      margin-bottom: 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-
-      &::before {
-        content: "→";
-        color: #ff0000;
-        font-weight: bold;
-        transition: transform 0.3s ease;
-      }
-
-      &:hover {
-        color: #000000;
-        &::before {
-          transform: translateX(5px);
-        }
-      }
+    h2 {
+        font-size: 52px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        background: linear-gradient(90deg, #ff0000, #333333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
-  }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+
+            &::before {
+                content: "✓";
+                color: #ff0000;
+                font-weight: bold;
+                margin-right: 15px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    button {
+        padding: 18px 45px;
+        border-radius: 50px;
+        border: 2px solid #ff0000;
+        background: #ff0000;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+            background: #cc0000;
+            border-color: #cc0000;
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+    }
+
 }
 
 .purchaseBtn {

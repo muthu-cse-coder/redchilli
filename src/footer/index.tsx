@@ -33,24 +33,22 @@ const Footer = () => {
                     {/* Contact Info */}
                     <div className={styles.contactCol}>
                         <h4>Contact Us</h4>
-                        <p>📍1st Floor
-                            292 Mani Road Mundradaippu
-                            Nanguneri Taluk
-                            Tirunelveli</p>
-                        <p>📞 +91 1234567890</p>
+                        <p>📍11/31 Raj Bhavan Colony,
+                          Velachery Check Post ,
+                            Chennai</p>
+                        <p>📞 +91 7550188731</p>
                         <p>✉️ redchilliads@gmail.com</p>
                     </div>
                 </div>
 
-                <div className={styles.bottomBar}>
+                {/* <div className={styles.bottomBar}>
                     <p>© 2026 RedChilli. All Rights Reserved.</p>
                     <div className={styles.socialIcons}>
-                        {/* Icons path kuduthukonga */}
                         <span>FB</span>
                         <span>IG</span>
                         <span>TW</span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </footer>
     );
