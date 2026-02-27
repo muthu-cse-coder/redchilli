@@ -169,7 +169,7 @@
   }
 
   .centerText {
-    font-size: 1.1rem; 
+    font-size:0.6rem; 
     letter-spacing: 1px;
   }
 }
@@ -177,6 +177,7 @@
 @media (max-width: 380px) {
   .wrapper {
     padding: 30px 8px 16px;
+    padding-bottom: 50px !important;
   }
 
   .orbitContainer {
