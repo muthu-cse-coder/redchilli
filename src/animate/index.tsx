@@ -24,7 +24,6 @@ const Animate = () => {
                     />
                 ))}
             </div>
-            {/* <h1 className="text-center">sdfghujio</h1> */}
         </div>
     );
 };

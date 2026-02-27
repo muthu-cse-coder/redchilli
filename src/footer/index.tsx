@@ -6,7 +6,6 @@ const Footer = () => {
         <footer className={styles.stFooterWrapper}>
             <div className={styles.container}>
                 <div className={styles.footerGrid}>
-                    {/* Brand Section */}
                     <div className={styles.brandCol}>
                         <div className={styles.logo}>
                             <div className={styles.logoCircle}>
@@ -18,8 +17,6 @@ const Footer = () => {
                             Elevate your brand with high-impact Mobile LED Advertising. Your message, moving across the heart of the city.
                         </p>
                     </div>
-
-                    {/* Quick Links */}
                     <div className={styles.linksCol}>
                         <h4>Quick Links</h4>
                         <ul>
@@ -29,8 +26,6 @@ const Footer = () => {
                             <li><a href="#documentation">Documentation</a></li>
                         </ul>
                     </div>
-
-                    {/* Contact Info */}
                     <div className={styles.contactCol}>
                         <h4>Contact Us</h4>
                         <p>📍11/31 Raj Bhavan Colony,

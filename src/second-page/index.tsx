@@ -1,4 +1,3 @@
-
 import React from "react";
 import style from './index.module.scss';
 
@@ -9,21 +8,18 @@ const SecondPage = () => {
       <div className={`${style.stLeftSideWrapper} col-lg-8 col-md-12`} 
            data-aos="fade-up" 
            data-aos-duration="1300">
-        
         <h1 className={style.mainHeading}  
             data-aos="fade-up" 
             data-aos-duration="1300">
           <div className={style.firstLine}>LED MARKETING & ADVERTISING</div>
           <span className={style.highlight}>Your Brand On The Move</span>
         </h1>
-
         <p className={style.subHeading} 
            data-aos="fade-up" 
            data-aos-delay="400"
            data-aos-duration="1300">
           Transform city streets into your showroom. 
         </p>
-
         <ul className={style.featureList} 
             data-aos="fade-up" 
             data-aos-delay="650" 
@@ -32,7 +28,6 @@ const SecondPage = () => {
           <li><span className={style.checkIcon}>✓</span> GPS Tracked Routes for Real-time Data</li>
           <li><span className={style.checkIcon}>✓</span> 24/7 Dynamic Content Management</li>
         </ul>
-
         <div className={`${style.ctaButtons} mt-2`} 
              data-aos="fade-up" 
              data-aos-delay="380" 
@@ -40,7 +35,6 @@ const SecondPage = () => {
           <button className={style.stButtonWrapper}>Get Free Quote...</button>
           <button className={style.stSecondButtonWrapper}>Call Now...</button>
         </div>
-
         <div className={style.statsContainer} data-aos="fade-up" data-aos-delay="750" data-aos-duration="1200">
           <div className={style.statItem}>
             <h3>50K+</h3>
@@ -56,7 +50,6 @@ const SecondPage = () => {
           </div>
         </div>
       </div>
-
       <div className={`${style.stRightSideWrapper} col-lg-4 col-md-12 p-0`} 
            data-aos="zoom-in" 
            data-aos-duration="1300">

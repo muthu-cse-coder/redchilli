@@ -25,8 +25,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
     return (
         <nav className={`${style.stNavBarWrapper} w-100`}>
             <div className={style.stNavbarLogo}>
-                {/* <div className={`${style.stNavLogoCircle}`}><img src="public/ba24dfb3-537b-4db6-8f79-41b1fad2c646.jfif" alt="" /></div> */}
-                <div className={style.logoCircle}>
+                 <div className={style.logoCircle}>
                     <img src="/ba24dfb3-537b-4db6-8f79-41b1fad2c646.jfif" alt="RedChilli Logo" />
                 </div>
                 <span className={style.stlogoText}>RedChilli</span>

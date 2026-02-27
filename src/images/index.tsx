@@ -23,7 +23,6 @@ const SixthPage: FunctionComponent<SixthPageProps> = () => {
           {benefits.map((item, index) => (
             <div key={index} className={styles.benefitCard} data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
-              // data-aos-offset="420"
               data-aos-duration="900">
               <div className={styles.iconBox}>0{index + 1}</div>
               <h3>{item.title}</h3>
