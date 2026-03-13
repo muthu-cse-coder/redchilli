@@ -340,6 +340,11 @@
 }
 
 @media (max-width: 480px) {
+  .timelineSection{
+    // background-color: green !important;
+    padding-top: 50px !important;
+    padding-bottom: 30px !important;
+  }
   .centerLine {
     left: 20px;
   }
