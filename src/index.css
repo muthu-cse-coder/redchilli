@@ -1,3 +1,10 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* பக்கவாட்டில் நகர்வதைத் தவிர்க்க */
+}
+
 * {
   box-sizing: border-box; 
   margin: 0;
