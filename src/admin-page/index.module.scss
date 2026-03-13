@@ -216,3 +216,21 @@
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .stAdminWrapper {
+    min-height: auto;
+  }
+
+  .stImageContainer {
+    height: auto;
+    margin-top: 0;
+    padding: 24px 0;
+  }
+
+  .stTruckImg {
+    margin-top: 0;
+    max-height: none;
+    height: auto;
+  }
+}
