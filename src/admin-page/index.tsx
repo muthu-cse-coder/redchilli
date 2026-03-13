@@ -58,11 +58,11 @@ const AdminPage = () => {
       </div>
 
       <div className={`${style.stSlideLayer} ${isAnimate ? style.animateCircle : ""}`}>
-        <img
+        {/* <img
           src="/a926c0ee-2705-4a97-84e1-3f2a4407e84c.jfif"
           alt="LED Advertising"
           className={style.stTruckImg}
-        />
+        /> */}
         <div className={style.mobileOverlayContent}>
           <div className={style.tagline}>Leading The Future</div>
           <h2>BRIGHTEN YOUR BRAND <span>WITH MOBILE LED</span></h2>

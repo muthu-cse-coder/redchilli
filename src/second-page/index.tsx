@@ -126,7 +126,6 @@
 // // };
 
 // // export default SecondPage;
-import React from "react";
 import style from './index.module.scss';
 
 const SecondPage = () => {
@@ -180,40 +179,27 @@ const SecondPage = () => {
                 </div>
             </div>
 
-            {/* <div className={`${style.stRightSideWrapper} col-lg-5 col-md-12 p-0`}
-                data-aos="zoom-in-left"
-                data-aos-duration="1300">
-                <div className={style.imageContainer}>
-                    <div className={style.redFloatingCard}>LIVE ADVERTISING</div>
-                    <img src="public/ecb01452-b655-42b5-8fcf-da57b35acbd2.jfif" alt="Mobile LED Truck" />
-                </div>
-            </div> */}
             <div className={`${style.stRightSideWrapper} col-lg-5 col-md-12 p-0`}
                 data-aos="zoom-in-left"
                 data-aos-duration="1300">
                 <div className={style.imageContainer}>
                     <div className={style.redFloatingCard}>LIVE ADVERTISING</div>
-
                     <img src="/ecb01452-b655-42b5-8fcf-da57b35acbd2.jfif" alt="Mobile LED Truck" />
 
-                    {/* Mobile only content */}
                     <div className={style.mobileOnlyContent}>
                         <div className={style.statItem}>
                             <h3>50K+</h3>
                             <p>Daily Views</p>
                         </div>
-
                         <div className={style.statItem}>
                             <h3>100%</h3>
                             <p>Mobile Reach</p>
                         </div>
-
                         <div className={style.statItem}>
                             <h3>20+</h3>
                             <p>Cities Covered</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -118,7 +118,7 @@
     text-align: center;
     animation: fadeInUp 1s ease 2.5s both;
     // background-color: aqua !important;
-    margin-top: 200px !important;
+    margin-top: 250px !important;
 
     .tagline {
       background: #ff0000;
@@ -214,23 +214,5 @@
 @media (max-width:768px){
   .mobileOverlayContent{
     display: block;
-  }
-}
-
-@media (max-width: 768px) {
-  .stAdminWrapper {
-    min-height: auto;
-  }
-
-  .stImageContainer {
-    height: auto;
-    margin-top: 0;
-    padding: 24px 0;
-  }
-
-  .stTruckImg {
-    margin-top: 0;
-    max-height: none;
-    height: auto;
   }
 }

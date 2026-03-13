@@ -11,6 +11,7 @@ import Clients from "./clients";
 import Animate from "./animate";
 import AdminPage from "./admin-page";
 import Footer from "./footer";
+import Popup from "./popup";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Clients />
             <Animate />
             <FixthPage />
+            <Popup/>
             <SixthPage />
             <SeventhPage />
             <ResponsiveSection />
