@@ -1,101 +1,358 @@
+// .timelineSection {
+//     padding: 80px 20px;
+//     background: #f9fafc;
+//     text-align: center;
+
+// }
+
+// .heading {
+//     font-size: 32px;
+//     font-weight: 700;
+//     margin-bottom: 60px;
+//     color: #111;
+// }
+
+// .timelineWrapper {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 40px;
+//     max-width: 900px;
+//     margin: 0 auto;
+// }
+
+// .timelineItem {
+//     display: flex;
+//     align-items: flex-start;
+//     gap: 20px;
+
+//     opacity: 0;
+//     transform: translateY(40px);
+//     transition: all 0.6s ease;
+// }
+
+// .timelineItem.active {
+//     opacity: 1;
+//     transform: translateY(0);
+// }
+
+// .year {
+//     width: 50px;
+//     height: 50px;
+//     background: red;
+//     color: white;
+//     border-radius: 50%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-weight: 800;
+//     font-size: 14px;
+//     z-index: 2;
+//     box-shadow: 0 0 0 8px rgba(255, 0, 0, 0.1);
+// }
+
+// .card {
+//     background: white;
+//     padding: 20px 25px;
+//     border-radius: 12px;
+//     text-align: left;
+//     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+//     flex: 1;
+//     transition: transform 0.3s ease;
+// }
+
+// .card:hover {
+//     transform: translateY(-10px);
+//     box-shadow: 0 25px 50px rgba(255, 0, 0, 0.1);
+//     border-color: rgba(255, 0, 0, 0.2);
+// }
+
+// .card h4 {
+//     margin-bottom: 10px;
+//     font-size: 18px;
+//     font-weight: 600;
+// }
+
+// .card p {
+//     font-size: 14px;
+//     color: #555;
+//     line-height: 1.6;
+// }
+// @media (max-width: 768px) {
+//     .timelineSection {
+//         padding: 48px 16px 24px;
+//     }
+
+//     .timelineItem {
+//         flex-direction: column;
+//         align-items: center;
+//         text-align: center;
+//     }
+
+//     .card {
+//         text-align: center;
+//     }
+// }
+
+// @media screen and (max-width:426px) {
+//     .timelineSection {
+//         padding: 36px 12px 18px !important;
+//     }
+
+// }
 .timelineSection {
-    padding: 80px 20px;
-    background: #f9fafc;
-    text-align: center;
-
+  padding: 120px 20px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
-.heading {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: #111;
-}
+.headerArea {
+  text-align: center;
+  margin-bottom: 100px;
 
-.timelineWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 900px;
+  .topTag {
+    color: #ff0000;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .heading {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    max-width: 800px;
     margin: 0 auto;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .redUnderline {
+    width: 80px;
+    height: 6px;
+    background: #ff0000;
+    margin: 25px auto 0;
+  }
+}
+
+.timelineContainer {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+// The vertical road line
+.centerLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #eee 10%, #eee 90%, transparent);
+  transform: translateX(-50%);
 }
 
 .timelineItem {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 80px;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-}
+  &.right {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+  }
 
-.timelineItem.active {
+  &.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0) scale(1);
+  }
 }
 
-.year {
-    width: 50px;
-    height: 50px;
-    background: red;
-    color: white;
+.left { transform: translateX(-50px); }
+.right { transform: translateX(50px); }
+
+.dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 4px solid #ff0000;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  span {
+    font-weight: 900;
+    font-size: 12px;
+    color: #1a1a1a;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 14px;
-    z-index: 2;
-    box-shadow: 0 0 0 8px rgba(255, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+  }
 }
 
 .card {
-    background: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    flex: 1;
-    transition: transform 0.3s ease;
+  width: 85%;
+  position: relative;
+  background: #fff;
+  padding: 35px;
+  border: 1px solid #f0f0f0;
+  transition: 0.4s;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.03);
+
+  &:hover {
+    border-color: #ff0000;
+    transform: translateY(-5px);
+    .cardGlow { opacity: 1; }
+  }
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(255, 0, 0, 0.1);
-    border-color: rgba(255, 0, 0, 0.2);
+.cardContent {
+  position: relative;
+  z-index: 2;
+
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    font-weight: 400;
+  }
 }
 
-.card h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 600;
+.cardGlow {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.03) 0%, transparent 100%);
+  opacity: 0;
+  transition: 0.4s;
 }
 
-.card p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
+/* --- Timeline Media Queries --- */
+
+@media (max-width: 1024px) {
+  .headerArea {
+    margin-bottom: 60px;
+    .heading {
+      font-size: 2.2rem;
+    }
+  }
+
+  .timelineContainer {
+    max-width: 90%;
+  }
+}
+
 @media (max-width: 768px) {
-    .timelineSection {
-        padding: 48px 16px 24px;
+  // 1. Center line-ai left side-ku shift panrom
+  .centerLine {
+    left: 30px; 
+    transform: none;
+  }
+
+  .timelineItem {
+    width: 100%;
+    padding-right: 0 !important;
+    padding-left: 70px !important; // Line-ku pakkathula gap vida
+    justify-content: flex-start !important;
+    margin-bottom: 50px;
+
+    // Right side elements-aiyum left-ku align panrom
+    &.right {
+      transform: translateX(-30px); // Animation offset adjustment
     }
 
-    .timelineItem {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    &.active {
+      transform: translateX(0) !important;
+    }
+  }
+
+  // 2. Dots-ai left line mela veikirom
+  .dot {
+    left: 30px;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    transform: translateX(-50%);
+
+    span {
+      font-size: 10px;
     }
 
-    .card {
-        text-align: center;
+    &::after {
+      width: 45px;
+      height: 45px;
     }
+  }
+
+  // 3. Cards-ai full width-ku mathurom
+  .card {
+    width: 100%;
+    padding: 25px;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+
+  .headerArea {
+    padding: 0 10px;
+    .heading {
+      font-size: 1.8rem;
+    }
+  }
 }
 
-@media screen and (max-width:426px) {
-    .timelineSection {
-        padding: 36px 12px 18px !important;
-    }
+@media (max-width: 480px) {
+  .centerLine {
+    left: 20px;
+  }
 
+  .timelineItem {
+    padding-left: 50px !important;
+  }
+
+  .dot {
+    left: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }

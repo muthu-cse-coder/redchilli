@@ -3,14 +3,14 @@ import style from './index.module.scss';
 
 const Animate = () => {
     const images = [
-        "/2e8d0414-d13b-4369-aa3a-722f44b4c838.jfif",
-        "/3a640dbc-5a80-42d7-9525-04294509533d.jfif",
-        "/63b00d5d-5f3d-495e-b159-8c4435351e66.jfif",
-        "/Untitled design (2).png",
-        "/671210a8-aa51-4b5b-a33c-2ce814f5ca67.jfif",
-        "/a2283803-09f8-4d37-9e7c-baad5f56e5f9.jfif",
-        "/a-modern-indian-city-at-night-with-a-tall-building.jpeg",
-        "/3a640dbc-5a80-42d7-9525-04294509533d.jfif"
+        "public/683333f2-729a-4ab0-88df-08ef35eb03c5.jfif",
+        "public/e448edee-fb65-403d-98db-dcf687530646.jfif",
+        "public/070a349f-2444-4541-9375-53fa2de58b83.jfif",
+        "public/805a4593-b9d9-4c0f-9653-e5cce600b5a6.jfif",
+        "public/7ceae2ef-eed8-47f3-8f88-42e9eb19b23e.jfif",
+        "public/34cbc7ea-fe8c-4a90-b33e-3d4040c97db0.jfif",
+        "public/03a8bde8-874d-42b7-b9dd-bba8bb16af87.jfif",
+        "public/ebd8132c-d9e2-471c-92ff-961ab1629748.jfif"
     ];
     return (
         <div id="demos" className={style.stHoleImageWrapper}>
