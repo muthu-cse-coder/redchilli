@@ -36,7 +36,6 @@ const ResponsiveSection = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
-        
         <div className={styles.imageSection} data-aos="fade-right" data-aos-duration="1200">
           <div className={styles.glowBackdrop}></div>
           <div className={styles.imageWrapper}>
@@ -47,14 +46,12 @@ const ResponsiveSection = () => {
             </div>
           </div>
         </div>
-
         <div className={styles.contentSection} data-aos="fade-left" data-aos-duration="1200">
           <span className={styles.topTag}>ELITE SOLUTIONS</span>
           <h2 className={styles.mainTitle}>
             LED Wall <br />
             <span className={styles.highlight}>Display Solutions</span>
           </h2>
-          
           <div className={styles.featureGrid}>
             <div className={styles.featureItem}>
               <div className={styles.dot}></div>

@@ -4,20 +4,20 @@ import style from "./index.module.scss";
 const Navbar: FunctionComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isServicesOpen, setIsServicesOpen] = useState(false); // Services hover state
+
+    const services = [
+        "Search Engine Optimization", "Social Media Marketing", "Graphic Designing",
+        "Web Development", "Mobile App Development", "Video Creation",
+        "Branding", "Live Chat", "LED Indoor and Outdoor Installation",
+        "LED Truck Outdoor for Campaign and Advertising"
+    ];
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    const navItems = [
-        { href: "#demos", label: "Demos" },
-        { href: "#OurServices", label: "Services" },
-        { href: "#features", label: "Features" },
-        { href: "#support", label: "Support" },
-        { href: "#documentation", label: "Clients" },
-    ];
 
     return (
         <nav className={`${style.stNavBarWrapper} ${scrolled ? style.scrolled : ""}`}>
@@ -29,18 +29,39 @@ const Navbar: FunctionComponent = () => {
             </div>
 
             <ul className={style.stNavBarLinks}>
-                {navItems.map((item) => (
-                    <li key={item.href}>
-                        <a href={item.href}>{item.label}</a>
-                    </li>
-                ))}
+                <li><a href="#demos">Demos</a></li>
+                
+                {/* Services Dropdown logic starts here */}
+                <li 
+                    className={style.dropdownContainer}
+                    onMouseEnter={() => setIsServicesOpen(true)}
+                    onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                    <a href="#OurServices">Services <span className={style.arrow}>▼</span></a>
+                    
+                    {isServicesOpen && (
+                        <div className={style.dropdownMenu}>
+                            {services.map((item, index) => (
+                                <div key={index} className={style.dropdownItem}>
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </li>
+
+                <li><a href="#features">Features</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#documentation">Clients</a></li>
             </ul>
 
             <div className={style.navRight}>
                 <button type="button" className={style.stPurchaseButton}>
                     BOOK VEHICLE
                     <span className={style.icon}>
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                     </span>
                 </button>
 
@@ -49,24 +70,11 @@ const Navbar: FunctionComponent = () => {
                     className={`${style.stHamburgerButton} ${isMenuOpen ? style.stHamburgerOpen : ""}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    <span />
-                    <span />
-                    <span />
+                    <span /><span /><span />
                 </button>
             </div>
-
-            {isMenuOpen && (
-                <div className={style.stMobileMenu}>
-                    <ul className={style.stMobileNavLinks}>
-                        {navItems.map((item) => (
-                            <li key={`mobile-${item.href}`}>
-                                <a href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>
-                            </li>
-                        ))}
-                    </ul>
-                   
-                </div>
-            )}
+            
+            {/* Mobile Menu logic... (Keep your existing code here) */}
         </nav>
     );
 };

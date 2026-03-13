@@ -590,3 +590,43 @@
         font-weight: 700;
     }
 }
+.dropdownContainer {
+  position: relative; // இது முக்கியம்
+  cursor: pointer;
+
+  .arrow {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%; // Navbar-க்குக் கீழே சரியாக வரும்
+  left: 0;
+  background-color: white;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownItem {
+  padding: 12px 20px;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #ff0000; // Red Chilli color
+    color: white;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
