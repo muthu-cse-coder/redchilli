@@ -25,7 +25,7 @@ function App() {
             <AdminPage />
             <SecondPage />
             <ThirdPage />
-            <Clients />
+            {/* <Clients /> */}
             <Animate />
             <FixthPage />
             <Popup/>
