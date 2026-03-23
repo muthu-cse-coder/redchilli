@@ -12,12 +12,12 @@ import Animate from "./animate";
 import AdminPage from "./admin-page";
 import Footer from "./footer";
 import Popup from "./popup";
+import BookingForm from "./booking-form";
 
 function App() {
   return (
-    <BrowserRouter>
-      {/* Navbar-ah BrowserRouter-kulla potta thaan routing links correct-ah work aagum */}
-      <Navbar />
+    <BrowserRouter>  
+     <Navbar />
 
       <Routes>
         <Route path="/" element={
@@ -31,6 +31,7 @@ function App() {
             <Popup/>
             <SixthPage />
             <SeventhPage />
+            <BookingForm/>
             <ResponsiveSection />
             <FaqPage />
           </>
