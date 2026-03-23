@@ -1,38 +1,11 @@
-// import styles from "./index.module.scss";
-
-// const ResponsiveSection = () => {
-//   return (
-//     <section className={styles.wrapper}>
-//       <div className={styles.container}>
-//         <div className={styles.imageSection} data-aos="flip-right" data-aos-delay="250" data-aos-duration="1000">
-//           <img src="/ad2d96f6-f952-4450-99c7-ed63c2087365.jfif" alt="Devices Preview" />
-//         </div>
-//         <div className={styles.contentSection} data-aos="zoom-out-left" data-aos-delay="250" data-aos-duration="1000">
-//           <h2>
-//             LED Wall Display Solutions 
-//           </h2>
-//           <ul>
-//             <li>Custom-size indoor and outdoor LED walls.</li>
-//             <li> HD / Full HD / 4K display support.
-//             </li>
-//             <li>High refresh rate and seamless panels.</li>
-//             <li>Weather-proof outdoor options.</li>
-//             <li>Suitable for concerts, weddings, exhibitions, retail branding, and corporate events</li>
-//           </ul>
-//           <button className={styles.purchaseBtn}>
-//             Purchase Now <span>→</span>
-//           </button>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ResponsiveSection;
+import { useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
 
 const ResponsiveSection = () => {
+    const navigate=useNavigate()
+const hanldlenavigate=()=>{
+navigate("/form")
+}
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -75,7 +48,7 @@ const ResponsiveSection = () => {
             Perfect for concerts, weddings, exhibitions, and premium corporate events.
           </p>
 
-          <button className={styles.purchaseBtn}>
+          <button className={styles.purchaseBtn} onClick={hanldlenavigate}>
             Enquire Now <span className={styles.arrow}>→</span>
           </button>
         </div>
