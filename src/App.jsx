@@ -13,6 +13,7 @@ import AdminPage from "./admin-page";
 import Footer from "./footer";
 import Popup from "./popup";
 import BookingForm from "./booking-form";
+import ThankYou from "./thank-you";
 
 function App() {
   return (
@@ -31,11 +32,12 @@ function App() {
             <Popup/>
             <SixthPage />
             <SeventhPage />
-            <BookingForm/>
             <ResponsiveSection />
             <FaqPage />
           </>
         } />
+        <Route path="/thankyou" element={<ThankYou/>}/>
+        <Route path="/form" element={<BookingForm/>}/>
       </Routes>
 
       <Footer />
