@@ -49,7 +49,7 @@ const BookingForm: FunctionComponent = () => {
             dateStyle: "medium",
             timeStyle: "short",
           }),
-          _subject: `📩 New Enquiry — ${formData.name}`, // ✅ FIXED
+          _subject: `📩 New Enquiry — ${formData.name}`,
           _template: "table",
           _captcha: "false",
         }),
@@ -78,7 +78,6 @@ const BookingForm: FunctionComponent = () => {
           </h2>
           <p>Share your requirements with us!</p>
         </div>
-
         <form className={style.stForm} onSubmit={handleSubmit}>
           <div className={style.inputGroup}>
             <input
@@ -122,8 +121,15 @@ const BookingForm: FunctionComponent = () => {
               </option>
               <option value="SEO">Search Engine Optimization</option>
               <option value="Web Development">Web Development</option>
-              <option value="LED Ads">LED Truck Advertising</option>
+              <option value="LED Ads">LED Truck Outdoor For Compaign and Advertising</option>
               <option value="Design">Graphic Designing</option>
+              <option value="social-media">Social media Marketing</option>
+              <option value="mobile-app">Mobile App Development</option>
+              <option value="video">Video Creation</option>
+              <option value="Branding">Branding</option>
+              <option value="Live-chat">Live Chat</option>
+              <option value="LED-indoor-outdoor">LED Indoor and Outdoor Installation</option>
+              <option value=""></option>
             </select>
           </div>
 

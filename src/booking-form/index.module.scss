@@ -26,10 +26,16 @@
     font-weight: 900;
     color: #222;
     margin-bottom: 10px;
-    span { color: #ff0000; }
+
+    span {
+      color: #ff0000;
+    }
   }
 
-  p { color: #666; font-size: 15px; }
+  p {
+    color: #666;
+    font-size: 15px;
+  }
 }
 
 .stForm {
@@ -43,7 +49,9 @@
     gap: 20px;
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -58,7 +66,9 @@
     }
   }
 
-  textarea { resize: vertical; }
+  textarea {
+    resize: vertical;
+  }
 
   .formSubmitBtn {
     background: #ff0000;
@@ -82,8 +92,11 @@
 }
 
 @media (max-width: 768px) {
-  .formCard { padding: 25px; }
+  .formCard {
+    padding: 25px;
+  }
+
   .stForm .inputGroup {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
