@@ -1,0 +1,192 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  min-height: auto;
+  padding: 56px 20px 28px;
+  background: white;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+.orbitContainer {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  will-change: transform;
+}
+
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2.5px dashed black;
+}
+
+.ring1 { 
+  width: 300px; 
+  height: 300px; 
+  animation: spinSlow 28s linear infinite;
+}
+
+.ring2 { 
+  width: 510px; 
+  height: 510px; 
+  animation: spinReverse 40s linear infinite;
+}
+
+.ring3 { 
+  width: 730px; 
+  height: 730px; 
+  animation: spinSlow 65s linear infinite;
+}
+
+
+
+.centerText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: red;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  z-index: 20;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.logoOrbit {
+  position: absolute;
+  inset: 0;
+}
+
+
+
+.logoWrapper {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+
+  &.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backface-visibility: hidden;
+
+    animation:
+      floatLogo 3s ease-in-out infinite,
+      glowPulse 4s ease-in-out infinite;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    }
+  }
+}
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 44px 16px 24px;
+    gap: 14px;
+  }
+
+  .orbitContainer {
+    width: 550px;
+    height: 550px;
+  }
+
+  .ring1 { width: 220px; height: 220px; }
+  .ring2 { width: 380px; height: 380px; }
+  .ring3 { width: 540px; height: 540px; }
+
+  .logoWrapper {
+    width: 60px;
+    height: 60px;
+    img {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  .centerText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 36px 12px 20px;
+    gap: 12px;
+  }
+
+  .orbitContainer {
+    width: 320px;
+    height: 320px;
+  }
+
+  .ring1 { width: 120px; height: 120px; }
+  .ring2 { width: 210px; height: 210px; }
+  .ring3 { width: 300px; height: 300px; }
+
+  .logoWrapper {
+    width: 45px;
+    height: 45px;
+    
+    img {
+      width: 40px;
+      height: 40px;
+      padding: 5px; 
+    }
+  }
+
+  .centerText {
+    font-size:0.6rem; 
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrapper {
+    padding: 30px 8px 16px;
+    padding-bottom: 50px !important;
+    padding-top: 0px !important;
+  }
+
+  .orbitContainer {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ring1 { width: 100px; height: 100px; }
+  .ring2 { width: 180px; height: 180px; }
+  .ring3 { width: 260px; height: 260px; }
+}

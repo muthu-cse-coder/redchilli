@@ -1,0 +1,378 @@
+//second page scss
+
+.stSeconPageWrapper {
+  padding: 100px 50px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.stLeftSideWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mainHeading {
+  font-size: 3rem;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -2px;
+
+  .firstLine {
+    display: block;
+    color: #1a1a1a;
+  }
+}
+
+.highlight {
+  color: #ff0000;
+  display: block;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-top: 5px;
+  text-shadow: 2px 2px 0px rgba(255, 0, 0, 0.05);
+}
+
+.subHeadingWrapper {
+  border-left: 5px solid #ff0000;
+  padding-left: 25px;
+}
+
+.subHeading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #444;
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #333;
+
+    .checkIcon {
+      color: #ff0000;
+      margin-right: 15px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.stButtonWrapper {
+  background: #ff0000;
+  color: #fff;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: 0.3s;
+  box-shadow: 10px 10px 0px rgba(255, 0, 0, 0.1);
+
+  &:hover {
+    background: #cc0000;
+    transform: translate(-3px, -3px);
+    box-shadow: 15px 15px 0px rgba(255, 0, 0, 0.15);
+  }
+}
+
+.stSecondButtonWrapper {
+  background: #fff;
+  color: #ff0000;
+  padding: 20px 40px;
+  border: 2px solid #ff0000;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    background: #ff0000;
+    color: #fff;
+  }
+}
+
+.statsContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 30px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  width: fit-content;
+
+  .statItem {
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 950;
+      margin: 0;
+      color: #ff0000;
+    }
+
+    p {
+      font-size: 0.7rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+  }
+
+  .statDivider {
+    width: 2px;
+    height: 40px;
+    background: #eee;
+  }
+}
+
+.stRightSideWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .imageContainer {
+    position: relative;
+    // padding: 20px;
+      padding: 60px 20px 20px 20px;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 15px solid #ff0000;
+      z-index: -1;
+    }
+  }
+
+  .redFloatingCard {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    z-index: 10;
+  }
+
+  img {
+    width: 100%;
+    max-width: 450px;
+    filter: grayscale(20%) contrast(1.1);
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ================================
+LAPTOP
+================================ */
+
+@media (max-width: 1200px) {
+
+  .stSeconPageWrapper {
+    padding: 90px 40px;
+  }
+
+  .mainHeading {
+    font-size: 2.7rem;
+  }
+
+  .highlight {
+    font-size: 2.2rem;
+  }
+
+}
+
+
+/* ================================
+TABLET
+================================ */
+
+@media (max-width: 1024px) {
+
+  .stSeconPageWrapper {
+    flex-direction: column;
+    gap: 60px;
+    padding: 80px 30px;
+    min-height: auto;
+  }
+
+  .stLeftSideWrapper {
+    align-items: center;
+    text-align: center;
+  }
+
+  .subHeadingWrapper {
+    border-left: none;
+    border-top: 5px solid #ff0000;
+    padding-top: 15px;
+  }
+
+  .statsContainer {
+    justify-content: center;
+  }
+
+  .stRightSideWrapper img {
+    max-width: 400px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .stSeconPageWrapper {
+    padding: 50px 20px !important;
+    // background-color: yellowgreen !important;
+    text-align: center;
+  }
+
+  .mainHeading {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+
+  .highlight {
+    font-size: 1.7rem;
+  }
+
+  .featureList {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaButtons button,
+  .ctaButtons a {
+    width: 100%;
+  }
+
+  .statsContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .stRightSideWrapper {
+    margin-top: 40px;
+  }
+
+  .stRightSideWrapper .imageContainer::after {
+    display: none;
+  }
+
+  .stRightSideWrapper img {
+    max-width: 100%;
+    filter: none;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .stSeconPageWrapper {
+    padding: 90px 15px 40px;
+  }
+
+  .mainHeading {
+    font-size: 1.6rem;
+  }
+
+  .highlight {
+    font-size: 1.4rem;
+  }
+
+  .subHeading {
+    font-size: 1rem;
+  }
+
+  .featureList li {
+    font-size: 1rem;
+  }
+
+  .stButtonWrapper,
+  .stSecondButtonWrapper {
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+
+  .statsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statDivider {
+    display: none;
+  }
+
+  .statItem h3 {
+    font-size: 1.6rem;
+  }
+
+}
+
+.mobileOnlyContent {
+  display: none;
+}
+
+@media (max-width:768px) {
+
+  .mobileOnlyContent {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+  }
+
+  .mobileOnlyContent .statItem {
+    text-align: center;
+  }
+
+  .mobileOnlyContent .statItem h3 {
+    color: #ff0000;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .mobileOnlyContent .statItem p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+}

@@ -1,0 +1,58 @@
+.mainScrollContainer {
+    position: relative;
+    height: 300vh; 
+    background: #000;
+    width: 100%;
+}
+
+.stickyWrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.adminLayer {
+    background: #fff; 
+}
+.stAdminWrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+
+    .stFristImageWrapper {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .stSecondImageWrapper {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        object-fit: contain;
+    }
+}
