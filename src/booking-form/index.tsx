@@ -2,7 +2,7 @@ import { FunctionComponent, useState } from "react";
 import style from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
 
-const ORG_EMAIL = "redchilliads@gmail.com";
+const ORG_EMAIL = "muthuselvantsy22@gmail.com";
 
 const BookingForm: FunctionComponent = () => {
   const navigate = useNavigate();

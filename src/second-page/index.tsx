@@ -33,11 +33,10 @@ navigate("/form")
                     <button className={style.stButtonWrapper} onClick={hanldlenavigate}>
                         Get Free Quote <span>→</span>
                     </button>
-                    <a href="tel:1234567894" className={style.stSecondButtonWrapper}>
+                    <a href="tel:7550188731" className={style.stSecondButtonWrapper}>
                         Call Now <span>⚡</span>
                     </a>
                 </div>
-
                 <div className={style.statsContainer}>
                     <div className={style.statItem}>
                         <h3>50K+</h3>
