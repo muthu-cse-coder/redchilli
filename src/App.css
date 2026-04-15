@@ -25,7 +25,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* Performance smooth-ah irukka ithu venum */
         will-change: transform; 
       }
 
