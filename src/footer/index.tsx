@@ -31,6 +31,7 @@ const Footer = () => {
                         <p>📍11/31 Raj Bhavan Colony,
                           Velachery Check Post ,
                             Chennai</p>
+                            <p>📞 +91 96591 71935</p>
                         <p>📞 +91 7550188731</p>
                         <p>✉️ redchilliads@gmail.com</p>
                     </div>
