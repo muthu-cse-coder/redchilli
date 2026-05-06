@@ -57,7 +57,7 @@ const Animate = () => {
   };
 
   return (
-    <section className={style.scrollSectionOuter}>
+    <section className={style.scrollSectionOuter} id='demos'>
       <div className={style.titleWrapper}>
         <h1>LIVE SCREENS</h1>
       </div>
