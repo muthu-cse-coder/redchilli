@@ -10,7 +10,6 @@ navigate("/form")
     return (
         <div className={style.stFixthWrapper}>
             <div className={style.stRowWrapper}>
-                 
                 <div className={style.stFristColumnWrapper} data-aos="fade-right" data-aos-duration="1000">
                     <span className={style.topLabel}>PREMIUM MOBILE BILLBOARDS</span>
                     <h2>RedChilli LED <br/> <span>Truck Advertising</span></h2>
@@ -21,7 +20,6 @@ navigate("/form")
                         <li><span>Versatile Use</span> for product launches and political campaigns.</li>
                         <li><span>Live Streaming</span> supports video, animations, and real-time ads.</li>
                     </ul>
-                    
                     <div className={style.btnContainer}>
                         <button className={style.mainBtn} onClick={hanldlenavigate}>Book Your Campaign</button>
                     </div>

@@ -12,10 +12,7 @@ const Navbar: FunctionComponent = () => {
   const [isBookDropdownOpen, setIsBookDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  const services = [
-    "Search Engine Optimization", "Social Media Marketing", "Graphic Designing",
-    "Web Development", "Mobile App Development", "Video Creation",
-    "Branding", "Live Chat", 
+  const services = [ 
     "LED van", "Outdoor LED", "LED Standee", "Touch Displays", 
     "Digital Tables", "Digital Sinage"
   ];
