@@ -24,35 +24,38 @@ const Animate = () => {
     const section = sectionRef.current;
     const trigger = triggerRef.current;
 
-    const pin = gsap.to(section, {
-      x: () => -(section.offsetWidth - window.innerWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top top",
-        end: () => `+=${section.offsetWidth}`,
-        scrub: 0.6,
-        pin: true,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    });
+    let ctx = gsap.context(() => {
+      gsap.to(section, {
+        x: () => -(section.scrollWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top top",
+          end: () => `+=${section.scrollWidth}`,
+          scrub: 0.6,
+          pin: true,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+    }, triggerRef);
 
-    return () => {
-      pin.kill();
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert(); // Cleanup lebih bersih pakai ctx.revert()
   }, []);
 
   const handleNav = (direction) => {
-    const totalWidth = sectionRef.current.offsetWidth;
-    const windowWidth = window.innerWidth;
-    const scrollDistance = totalWidth - windowWidth;
-    const step = scrollDistance / (images.length - 1);
+    // Navigasi manual berdasarkan scroll position
+    const scrollST = ScrollTrigger.getAll()[0];
+    if (!scrollST) return;
+
+    const currentScroll = window.scrollY;
+    const totalScroll = scrollST.end - scrollST.start;
+    const step = totalScroll / (images.length);
+
     if (direction === 'next') {
-      window.scrollBy({ top: step, behavior: 'smooth' });
+      window.scrollTo({ top: currentScroll + step, behavior: 'smooth' });
     } else {
-      window.scrollBy({ top: -step, behavior: 'smooth' });
+      window.scrollTo({ top: currentScroll - step, behavior: 'smooth' });
     }
   };
 
@@ -61,20 +64,28 @@ const Animate = () => {
       <div className={style.titleWrapper}>
         <h1>LIVE SCREENS</h1>
       </div>
+      
       <div ref={triggerRef} className={style.pinContainer}>
-        
-        <button className={`${style.arrowBtn} ${style.left}`} onClick={() => handleNav('prev')}>
+        <button 
+          className={`${style.arrowBtn} ${style.left}`} 
+          onClick={() => handleNav('prev')}
+          aria-label="Previous"
+        >
           &#10094;
         </button>
         
-        <button className={`${style.arrowBtn} ${style.right}`} onClick={() => handleNav('next')}>
+        <button 
+          className={`${style.arrowBtn} ${style.right}`} 
+          onClick={() => handleNav('next')}
+          aria-label="Next"
+        >
           &#10095;
         </button>
 
         <div ref={sectionRef} className={style.scrollSectionInner}>
           {images.map((src, index) => (
             <div key={index} className={style.scrollImageCard}>
-              <img src={src} alt={`screen-${index}`} />
+              <img src={src} alt={`screen-${index}`} loading="lazy" />
             </div>
           ))}
         </div>
