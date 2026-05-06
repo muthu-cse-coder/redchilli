@@ -23,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
+          <h1>Redchilli</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi inventore reprehenderit deserunt nisi, culpa sint. Eaque dolore illum quasi cupiditate incidunt tenetur rerum?</p>
             <AdminPage />
             <SecondPage />
             <ThirdPage />
