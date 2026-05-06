@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FunctionComponent, useEffect } from "react";
 
-interface SeventhPageProps {}
+interface SeventhPageProps { }
 
 const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
     {
       title: "LED Truck Advertising",
       desc: "Reach your audience anywhere with high-impact mobile billboard trucks.",
-      image: "/Mobile-LED-Screen-Trailer-Rental.jpg", 
+      image: "/Mobile-LED-Screen-Trailer-Rental.jpg",
       tag: "Mobile Ads",
       animation: "fade-right",
       // offset: "420"
@@ -42,7 +42,21 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
       tag: "Exhibitions",
       animation: "fade-up",
       // offset: "420"
-    }
+    },
+    {
+      title: "Digital Billboard Advertising",
+      desc: "High-visibility digital billboards placed in prime locations to maximize brand exposure and engagement.",
+      image: "/5d8959f6-e8ae-4b45-8f4a-18f0a03b1e75.jfif",
+      tag: "Outdoor Ads",
+      animation: "fade-right"
+    },
+    {
+  title: "Stage LED Backdrop Setup",
+  desc: "Dynamic LED backdrops for stages that enhance performances, conferences, and live shows.",
+  image: "/a2283803-09f8-4d37-9e7c-baad5f56e5f9.jfif",
+  tag: "Stage Setup",
+  animation: "fade-left"
+}
   ];
 
   return (
@@ -54,10 +68,10 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
         </div>
         <div className={styles.serviceLayout}>
           {services.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={styles.itemCard}
-              data-aos={item.animation} 
+              data-aos={item.animation}
             >
               <div className={styles.imageBox}>
                 <img src={item.image} alt={item.title} />
@@ -69,7 +83,7 @@ const SeventhPage: FunctionComponent<SeventhPageProps> = () => {
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
                 <button className={styles.btnLink}>
-                  Learn More 
+                  Learn More
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ff0000">
                       <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />

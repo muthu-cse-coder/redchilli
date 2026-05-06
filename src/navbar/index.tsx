@@ -65,7 +65,7 @@ const Navbar: FunctionComponent = () => {
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <a href="#OurServices">Services <span className={style.arrow}>▼</span></a>
+            <a href="#OurServices" style={{"marginTop":"3px"}}>Services <span className={style.arrow}>▼</span></a>
             {isServicesOpen && (
               <div className={style.dropdownMenu} style={{left: '50%', transform: 'translateX(-50%)'}}>
                 {services.map((s, i) => <div key={i} className={style.dropdownItem}>{s}</div>)}
@@ -77,7 +77,7 @@ const Navbar: FunctionComponent = () => {
             onMouseEnter={() => setIsDMSOpen(true)}
             onMouseLeave={() => setIsDMSOpen(false)}
           >
-            <a href="#dm-services">Digital Marketing Services <span className={style.arrow}>▼</span></a>
+            <a href="#dm-services" style={{"marginTop":"3px"}}>Digital Marketing Services <span className={style.arrow}>▼</span></a>
             {isDMSOpen && (
               <div className={style.dropdownMenu} style={{left: '50%', transform: 'translateX(-50%)'}}>
                 {dmServices.map((s, i) => (
