@@ -1,38 +1,20 @@
 .scrollSectionOuter {
   overflow: hidden;
   background-color: white;
-  width: 100%;
-}
-
-.titleWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 0 20px 0; // Memberi jarak dari section atasnya
-  background-color: white;
-
-  h1 {
-    color: black;
-    font-size: clamp(2rem, 8vw, 4rem); // Font dinamis: kecil di HP, besar di Desktop
-    font-weight: 800;
-    margin: 0;
-  }
 }
 
 .pinContainer {
-  position: relative;
+  position: relative; 
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center; // Menjaga konten tetap di tengah secara vertikal
 }
 
 .arrowBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 100;
+  z-index: 100; // Above images
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -44,11 +26,10 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  transition: all 0.3s ease;
+  transition: background 0.3s;
 
   &:hover {
     background: rgba(0, 0, 0, 0.8);
-    scale: 1.1;
   }
 
   &.left { left: 20px; }
@@ -56,70 +37,82 @@
 }
 
 .scrollSectionInner {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   width: max-content;
-  height: 100%; // Mengikuti tinggi pinContainer
   align-items: center;
-  padding: 0 50vw 0 0; // Memberi ruang di akhir scroll
+  background-color: white;
+}
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  h1 { color: black; font-size: 4rem; font-weight: 800; }
 }
 
 .scrollImageCard {
-  width: 35vw;
-  height: 80vh; // Sedikit lebih kecil dari container agar tidak mepet
+  width: 30vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
-
+  padding: 0 20px;
   img {
     width: 100%;
     max-width: 500px;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
 }
-
-/* --- FIX UNTUK MOBILE (MENGHILANGKAN SPACE) --- */
 @media (max-width: 768px) {
-  .pinContainer {
-    height: 60vh; // Di HP jangan 100vh supaya gak terlalu "bolong"
-  }
-
   .scrollSectionInner {
-    height: 100%;
+    align-items: center;
   }
 
   .scrollImageCard {
-    width: 80vw; // Di HP card lebih lebar
-    height: 100%;
+    width: 80vw;
+    padding: 0 10px;
 
     img {
-      max-width: 100%;
-      height: 300px; // Tinggi gambar di sesuaikan
+      max-width: 300px;
+      height: 250px;
     }
+  }
+
+  .titleWrapper h1 {
+    font-size: 2.2rem;
+    text-align: center;
   }
 
   .arrowBtn {
     width: 40px;
     height: 40px;
-    &.left { left: 10px; }
-    &.right { right: 10px; }
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .titleWrapper {
-    padding: 40px 0 10px 0;
-  }
-  
-  .pinContainer {
-    height: 50vh; // Lebih pendek lagi untuk HP kecil
+  .scrollImageCard {
+    // width: 90vw;
+
+    img {
+      max-width: 260px;
+      height: 220px;
+      border-radius: 15px;
+    }
   }
 
-  .scrollImageCard img {
-    height: 250px;
+  .titleWrapper h1 {
+    font-size: 1.8rem;
+  }
+
+  .arrowBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
   }
 }
