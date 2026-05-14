@@ -33,7 +33,7 @@ navigate("/form")
                     <button className={style.stButtonWrapper} onClick={hanldlenavigate}>
                         Get Free Quote <span>→</span>
                     </button>
-                    <a href="tel:7550188731" className={style.stSecondButtonWrapper}>
+                    <a href="tel:9659171935" className={style.stSecondButtonWrapper}>
                         Call Now <span>⚡</span>
                     </a>
                 </div>
@@ -61,7 +61,6 @@ navigate("/form")
                 <div className={style.imageContainer}>
                     <div className={style.redFloatingCard}>LIVE ADVERTISING</div>
                     <img src="/ecb01452-b655-42b5-8fcf-da57b35acbd2.jfif" alt="Mobile LED Truck" />
-
                     <div className={style.mobileOnlyContent}>
                         <div className={style.statItem}>
                             <h3>50K+</h3>
