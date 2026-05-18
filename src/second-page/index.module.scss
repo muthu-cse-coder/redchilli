@@ -65,48 +65,163 @@
   }
 }
 
+// .ctaButtons {
+//   display: flex;
+//   gap: 15px;
+//   margin-top: 10px;
+// }
+
+// .stButtonWrapper {
+//   background: #ff0000;
+//   color: #fff;
+//   padding: 20px 40px;
+//   border: none;
+//   border-radius: 0;
+//   cursor: pointer;
+//   font-size: 16px;
+//   font-weight: 900;
+//   text-transform: uppercase;
+//   transition: 0.3s;
+//   box-shadow: 10px 10px 0px rgba(255, 0, 0, 0.1);
+
+//   &:hover {
+//     background: #cc0000;
+//     transform: translate(-3px, -3px);
+//     box-shadow: 15px 15px 0px rgba(255, 0, 0, 0.15);
+//   }
+// }
+
+// .stSecondButtonWrapper {
+//   background: #fff;
+//   color: #ff0000;
+//   padding: 20px 40px;
+//   border: 2px solid #ff0000;
+//   font-weight: 900;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   transition: 0.3s;
+
+//   &:hover {
+//     background: #ff0000;
+//     color: #fff;
+//   }
+// }
 .ctaButtons {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+/* =========================
+   PRIMARY RED BUTTON
+========================= */
 .stButtonWrapper {
-  background: #ff0000;
-  color: #fff;
-  padding: 20px 40px;
+  position: relative;
+  padding: 16px 34px;
   border: none;
-  border-radius: 0;
-  cursor: pointer;
+  outline: none;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #ff1f4b, #ff4d6d);
+  color: #fff;
   font-size: 16px;
-  font-weight: 900;
-  text-transform: uppercase;
-  transition: 0.3s;
-  box-shadow: 10px 10px 0px rgba(255, 0, 0, 0.1);
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(255, 31, 75, 0.35);
 
-  &:hover {
-    background: #cc0000;
-    transform: translate(-3px, -3px);
-    box-shadow: 15px 15px 0px rgba(255, 0, 0, 0.15);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  z-index: 1;
 }
 
+.stButtonWrapper span {
+  transition: transform 0.3s ease;
+  font-size: 18px;
+}
+
+.stButtonWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+  z-index: -1;
+}
+
+.stButtonWrapper:hover::before {
+  left: 120%;
+}
+
+.stButtonWrapper:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px #ef9090;
+  color: #fff;
+}
+
+.stButtonWrapper:hover span {
+  transform: translateX(6px);
+}
 .stSecondButtonWrapper {
+  position: relative;
+  padding: 15px 32px;
+  border-radius: 60px;
+  border: 2px solid #ff1f4b;
   background: #fff;
-  color: #ff0000;
-  padding: 20px 40px;
-  border: 2px solid #ff0000;
-  font-weight: 900;
-  text-transform: uppercase;
+  color: #ff1f4b;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: all 0.4s ease;
 
-  &:hover {
-    background: #ff0000;
-    color: #fff;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
 }
 
+.stSecondButtonWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff1f4b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.stSecondButtonWrapper:hover::before {
+  transform: scaleX(1);
+}
+
+.stSecondButtonWrapper:hover {
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 31, 75, 0.35);
+}
+
+@media (max-width: 768px) {
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .stButtonWrapper,
+  .stSecondButtonWrapper {
+    width: 100%;
+  }
+}
 .statsContainer {
   display: flex;
   align-items: center;
@@ -150,9 +265,7 @@
   .imageContainer {
     position: relative;
     // padding: 20px;
-      padding: 60px 20px 20px 20px;
-
-
+      padding:20px;
     &::after {
       content: '';
       position: absolute;
@@ -176,7 +289,6 @@
     font-size: 0.8rem;
     z-index: 10;
   }
-
   img {
     width: 100%;
     max-width: 450px;
@@ -184,10 +296,6 @@
     box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.1);
   }
 }
-
-/* ================================
-LAPTOP
-================================ */
 
 @media (max-width: 1200px) {
 
@@ -205,10 +313,6 @@ LAPTOP
 
 }
 
-
-/* ================================
-TABLET
-================================ */
 
 @media (max-width: 1024px) {
 

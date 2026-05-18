@@ -52,7 +52,6 @@ navigate("/form")
             Enquire Now <span className={styles.arrow}>→</span>
           </button>
         </div>
-
       </div>
     </section>
   );

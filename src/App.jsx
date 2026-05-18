@@ -14,6 +14,7 @@ import Footer from "./footer";
 import Popup from "./popup";
 import BookingForm from "./booking-form";
 import ThankYou from "./thank-you";
+import DigitalMarketing from "./digital-marketing";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <>
             <AdminPage />
             <SecondPage />
+            <DigitalMarketing/>
             <ThirdPage />
             {/* <Clients /> */}
             <Animate />
