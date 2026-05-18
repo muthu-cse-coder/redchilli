@@ -17,6 +17,10 @@ img {
   display: block;
   max-width: 100%;
 }
+/* index.css or App.css */
+html {
+  scroll-behavior: auto; /* smooth-ஆ இருந்தா இதை மாத்துங்க */
+}
 
 * {
   box-sizing: border-box; 

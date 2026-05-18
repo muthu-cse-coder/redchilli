@@ -586,7 +586,6 @@ const Animate = () => {
 
     const tick = () => {
       const sw = singleW.current;
-
       if (!pausedRef.current && !hoveredRef.current && sw > 0) { // ✅ hover check
         posRef.current -= SPEED * dirRef.current;
       }
@@ -594,12 +593,10 @@ const Animate = () => {
         while (posRef.current <= -sw) posRef.current += sw;
         while (posRef.current >   0)  posRef.current -= sw;
       }
-
       track.style.transform = `translateX(${posRef.current}px)`;
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
-
     const onWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
       e.preventDefault();
@@ -617,15 +614,11 @@ const Animate = () => {
       touchStartX.current = e.touches[0].clientX;
       if (Math.abs(dx) > 1) scheduleResume(dx > 0 ? 1 : -1);
     };
-
-    // ✅ Mouse enter — pause
     const onMouseEnter = () => {
       hoveredRef.current = true;
       pausedRef.current = true;
       clearTimeout(resumeTimer.current);
     };
-
-    // ✅ Mouse leave — resume
     const onMouseLeave = () => {
       hoveredRef.current = false;
       pausedRef.current = false;

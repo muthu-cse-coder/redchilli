@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import style from './index.module.scss';
-
 const SecondPage = () => {
-    const navigate = useNavigate()
-    const hanldlenavigate = () => {
-        navigate("/form")
-    }
+      const navigate=useNavigate()
+const hanldlenavigate=()=>{
+navigate("/form")
+}
     return (
         <div className={`${style.stSeconPageWrapper} row w-100 m-0`} data-aos="fade-up">
             <div className={`${style.stLeftSideWrapper} col-lg-7 col-md-12`}
@@ -29,13 +28,8 @@ const SecondPage = () => {
                     <button className={style.stButtonWrapper} onClick={hanldlenavigate}>
                         Get Free Quote <span>→</span>
                     </button>
-                    <a
-                        href="919659171935"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={style.stSecondButtonWrapper}
-                    >
-                        Call NOW
+                    <a href="tel:+919659171935" target='_blank' rel='noopener noreeferrer' className={style.stSecondButtonWrapper}>
+                        Call Now 
                     </a>
                 </div>
                 <div className={style.statsContainer}>
