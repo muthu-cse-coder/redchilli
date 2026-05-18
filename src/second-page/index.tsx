@@ -30,7 +30,7 @@ const SecondPage = () => {
                         Get Free Quote <span>→</span>
                     </button>
                     <a
-                        href="https://wa.me/919659171935"
+                        href="919659171935"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={style.stSecondButtonWrapper}
