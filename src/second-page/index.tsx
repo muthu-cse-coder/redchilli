@@ -29,9 +29,14 @@ navigate("/form")
                     <button className={style.stButtonWrapper} onClick={hanldlenavigate}>
                         Get Free Quote <span>→</span>
                     </button>
-                    <a href="tel:9659171935" className={style.stSecondButtonWrapper}>
-                        Call Now 
-                    </a>
+                   <a
+  href="https://wa.me/919659171935"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={style.stSecondButtonWrapper}
+>
+ Call NOW
+</a>
                 </div>
                 <div className={style.statsContainer}>
                     <div className={style.statItem}>
