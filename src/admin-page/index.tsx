@@ -37,7 +37,7 @@ const AdminPage = () => {
           className={`${style.stSlideLayer} ${isAnimate ? style.animateCircle : ""}`}
         >
           <img
-            src="/public/admin-page.jfif"
+            src="/admin-page.jfif"
             alt="LED Advertising"
             className={style.stTruckImg}
           />
