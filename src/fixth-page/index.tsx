@@ -27,7 +27,7 @@ navigate("/form")
                 <div className={style.stSecondColumnWrapper} data-aos="zoom-in-up" data-aos-duration="1200">
                     <div className={style.imageFrame}>
                         <div className={style.neonCorner}></div>
-                        <img src="/Untitled design (12).png" alt="RedChilli LED Truck" />
+                        <img src="/mini truck led van image (1).png" alt="RedChilli LED Truck" />
                         <div className={style.floatingTag}>LIVE NOW</div>
                     </div>
                 </div>
