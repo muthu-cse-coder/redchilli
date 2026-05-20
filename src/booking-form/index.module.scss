@@ -1,3 +1,172 @@
+// .formContainer {
+//   padding: 80px 4%;
+//   background: #fdfdfd;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 50px;
+// }
+
+// .formCard {
+//   background: white;
+//   width: 100%;
+//   max-width: 800px;
+//   padding: 40px;
+//   border-radius: 12px;
+//   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+//   border-top: 5px solid #ff0000;
+// }
+
+// .formHeader {
+//   text-align: center;
+//   margin-bottom: 30px;
+
+//   h2 {
+//     font-size: 32px;
+//     font-weight: 900;
+//     color: #222;
+//     margin-bottom: 10px;
+
+//     span {
+//       color: #ff0000;
+//     }
+//   }
+
+//   p {
+//     color: #666;
+//     font-size: 15px;
+//   }
+// }
+
+// .stForm {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+
+//   .inputGroup {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 20px;
+//   }
+
+//   input {
+//     width: 100%;
+//     padding: 12px 15px;
+//     border: 1px solid #ddd;
+//     border-radius: 6px;
+//     font-size: 15px;
+//     transition: 0.3s;
+//     outline: none;
+
+//     &:focus {
+//       border-color: #ff0000;
+//       box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+//     }
+
+
+//     textarea {
+//       resize: vertical;
+//     }
+//   }
+
+//   select {
+//     width: 100%;
+//     background: #fff;
+//     border: 2px solid #ececec;
+//     border-radius: 18px;
+//     padding: 18px 50px 18px 20px;
+//     font-size: 1rem;
+//     color: #111;
+//     outline: none;
+//     cursor: pointer;
+//     transition: 0.35s ease;
+//     appearance: none;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+
+//     /* Custom Arrow */
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ff1e1e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+//     background-repeat: no-repeat;
+//     background-position: right 18px center;
+//     background-size: 18px;
+
+//     &:focus {
+//       border-color: #ff1e1e;
+//       box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.08);
+//       transform: translateY(-2px);
+//     }
+
+//     &:hover {
+//       border-color: #ff1e1e;
+//     }
+//   }
+
+//   select option {
+//     background: #fff;
+//     color: #111;
+//     padding: 10px;
+//   }
+
+//   .formSubmitBtn {
+//     background: #ff0000;
+//     color: white;
+//     border: none;
+//     padding: 15px;
+//     font-weight: 800;
+//     font-size: 16px;
+//     border-radius: 6px;
+//     cursor: pointer;
+//     transition: 0.3s ease;
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+
+//     &:hover {
+//       background: #ffd700;
+//       color: #000;
+//       transform: translateY(-2px);
+//     }
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .formCard {
+//     padding: 25px;
+//   }
+
+//   .stForm .inputGroup {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// .backBtn {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 8px;
+//   background: red;
+//   border: 1px solid #dcdcdc;
+//   padding: 10px 18px;
+//   border-radius: 12px;
+//   font-size: 15px;
+//   font-weight: 600;
+//   cursor: pointer;
+//   color: #f8f5f5;
+//   margin-bottom: 25px;
+//   transition: all 0.3s ease;
+
+//   &:hover {
+//     background: #111;
+//     color: #fff;
+//     transform: translateX(-3px);
+//   }
+
+//   &:active {
+//     transform: scale(0.96);
+//   }
+// }
+// .stOption{
+//   background-color: yellow !important;
+// }
 .formContainer {
   padding: 80px 4%;
   background: #fdfdfd;
@@ -62,12 +231,27 @@
       border-color: #ff0000;
       box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
     }
+  }
 
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+    resize: vertical;
 
-    textarea {
-      resize: vertical;
+    &:focus {
+      border-color: #ff0000;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
     }
   }
+
+  /* =========================
+     SELECT BOX
+  ========================= */
 
   select {
     width: 100%;
@@ -102,10 +286,29 @@
     }
   }
 
+  /* =========================
+     OPTION STYLE
+     NOTE:
+     Browser limitation nala full styling work aagadhu.
+     Chrome / Edge la mostly work agum.
+  ========================= */
+
   select option {
-    background: #fff;
-    color: #111;
-    padding: 10px;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  select option:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+
+  select option:checked {
+    background: #ff0000 linear-gradient(0deg, #ff0000 0%, #ff0000 100%);
+    color: #fff;
   }
 
   .formSubmitBtn {
@@ -126,16 +329,6 @@
       color: #000;
       transform: translateY(-2px);
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .formCard {
-    padding: 25px;
-  }
-
-  .stForm .inputGroup {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -162,5 +355,183 @@
 
   &:active {
     transform: scale(0.96);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 25px;
+  }
+
+  .stForm {
+    .inputGroup {
+      grid-template-columns: 1fr;
+    }
+
+    select {
+      font-size: 14px;
+      padding: 16px 45px 16px 16px;
+      border-radius: 14px;
+      background-size: 16px;
+      background-position: right 14px center;
+    }
+
+    select option {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 60px 4%;
+  }
+
+  .formCard {
+    padding: 20px;
+  }
+
+  .formHeader {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .stForm {
+    gap: 16px;
+
+    input,
+    textarea,
+    select {
+      font-size: 13px;
+    }
+
+    select {
+      padding: 14px 42px 14px 14px;
+      border-radius: 12px;
+      background-size: 14px;
+      background-position: right 12px center;
+    }
+
+    select option {
+      font-size: 13px;
+      padding: 10px;
+    }
+
+    .formSubmitBtn {
+      font-size: 14px;
+      padding: 14px;
+    }
+  }
+
+  .backBtn {
+    font-size: 13px;
+    padding: 9px 15px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .formContainer {
+    padding: 60px 16px;
+  }
+
+  .formCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  .stForm {
+
+    .inputGroup {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    select {
+      padding: 16px 42px 16px 14px;
+    }
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .formContainer {
+    padding: 50px 12px;
+  }
+
+  .formCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .formHeader {
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .stForm {
+
+    .inputGroup {
+      gap: 14px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      min-width: 0;
+      font-size: 13px;
+      padding: 13px;
+      box-sizing: border-box;
+    }
+
+    select {
+      padding-right: 40px;
+      background-position: right 12px center;
+    }
+
+    .formSubmitBtn {
+      width: 100%;
+    }
+  }
+  
+  .backBtn {
+    width: fit-content;
+    max-width: 100%;
   }
 }

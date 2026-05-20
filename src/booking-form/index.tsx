@@ -1,19 +1,11 @@
 import style from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
-import {
-  FunctionComponent,
-  useEffect,
-  useState,
-} from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
-const ORG_EMAIL = "muthuselvantsy22@gmail.com";
+const ACCESS_KEY = "f41a3b72-c436-4d35-9792-b8624b08c5ef";
 
 const BookingForm: FunctionComponent = () => {
   const navigate = useNavigate();
-
-  // =========================
-  // STATE
-  // =========================
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,82 +17,78 @@ const BookingForm: FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // =========================
-  // SCROLL TOP
-  // =========================
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }, []);
-
-  // =========================
-  // INPUT CHANGE
-  // =========================
   const handleChange = (
     e: React.ChangeEvent<
-      HTMLInputElement |
-      HTMLSelectElement |
-      HTMLTextAreaElement
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-
     setError("");
   };
-
-  // =========================
-  // BACK BUTTON
-  // =========================
   const handleBack = () => {
     navigate(-1);
   };
-
-  // =========================
-  // SUBMIT
-  // =========================
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const validate = (): boolean => {
+    if (!formData.name.trim()) {
+      setError("Please enter your name.");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setError("Please enter your email address.");
+      return false;
+    }
+    if (!/^\d{10}$/.test(formData.phone)) {
+      setError("Please enter a valid 10-digit phone number.");
+      return false;
+    }
+    if (!formData.service) {
+      setError("Please select a service.");
+      return false;
+    }
+    return true;
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!validate()) return;
 
     setLoading(true);
     setError("");
 
     try {
       const form = new FormData();
-
+      form.append("access_key", ACCESS_KEY);
       form.append("name", formData.name);
       form.append("email", formData.email);
       form.append("phone", formData.phone);
       form.append("service", formData.service);
       form.append("message", formData.message);
-
       form.append(
-        "_subject",
-        `📩 New Enquiry — ${formData.name}`
+        "submitted_on",
+        new Date().toLocaleString("en-IN", {
+          dateStyle: "medium",
+          timeStyle: "short",
+        })
       );
+      form.append("subject", `📩 New Enquiry — ${formData.name}`);
+      form.append("from_name", "Red Chilli Advertisement");
+      form.append("botcheck", "")
 
-      form.append("_template", "table");
-      form.append("_captcha", "false");
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form,
+      });
 
-      const res = await fetch(
-        `https://formsubmit.co/ajax/${ORG_EMAIL}`,
-        {
-          method: "POST",
-          body: form,
-        }
-      );
+      const data = await response.json();
 
-      const data = await res.json();
-
-      if (
-        data.success === "true" ||
-        data.success === true
-      ) {
-        // RESET FORM
+      if (data.success) {
         setFormData({
           name: "",
           email: "",
@@ -109,22 +97,14 @@ const BookingForm: FunctionComponent = () => {
           message: "",
         });
 
-        // SCROLL TOP
         window.scrollTo(0, 0);
-
-        // THANK YOU PAGE
         navigate("/thankyou");
       } else {
-        setError(
-          "Failed to send message. Please try again."
-        );
+        setError(data.message || "Failed to send. Please try again.");
       }
     } catch (err) {
       console.error(err);
-
-      setError(
-        "Network error. Please try again."
-      );
+      setError("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -133,34 +113,21 @@ const BookingForm: FunctionComponent = () => {
   return (
     <div className={style.formContainer} id="form">
       <div className={style.formCard}>
-
-        {/* BACK BUTTON */}
         <button
           className={style.backBtn}
           onClick={handleBack}
-          type="button"
         >
           ← Back
         </button>
 
-        {/* HEADER */}
         <div className={style.formHeader}>
           <h2>
             GET IN <span>TOUCH</span>
           </h2>
-
-          <p>
-            Share your requirements with us!
-          </p>
+          <p>Share your requirements with us!</p>
         </div>
 
-        {/* FORM */}
-        <form
-          className={style.stForm}
-          onSubmit={handleSubmit}
-        >
-
-          {/* NAME + EMAIL */}
+        <form className={style.stForm} onSubmit={handleSubmit}>
           <div className={style.inputGroup}>
             <input
               type="text"
@@ -180,8 +147,6 @@ const BookingForm: FunctionComponent = () => {
               required
             />
           </div>
-
-          {/* PHONE + SERVICE */}
           <div className={style.inputGroup}>
             <input
               type="tel"
@@ -200,11 +165,11 @@ const BookingForm: FunctionComponent = () => {
               onChange={handleChange}
               required
             >
-              <option value="" disabled>
+              <option value="" disabled >
                 Select a Service
               </option>
 
-              <option value="SEO">
+              <option value="SEO" >
                 Search Engine Optimization
               </option>
 
@@ -213,8 +178,7 @@ const BookingForm: FunctionComponent = () => {
               </option>
 
               <option value="LED Ads">
-                LED Truck Outdoor For Campaign
-                and Advertising
+                LED Truck Outdoor For Campaign and Advertising
               </option>
 
               <option value="Graphic Designing">
@@ -242,13 +206,10 @@ const BookingForm: FunctionComponent = () => {
               </option>
 
               <option value="LED Indoor & Outdoor Installation">
-                LED Indoor and Outdoor
-                Installation
+                LED Indoor and Outdoor Installation
               </option>
             </select>
           </div>
-
-          {/* MESSAGE */}
           <textarea
             name="message"
             placeholder="Your Message..."
@@ -256,30 +217,25 @@ const BookingForm: FunctionComponent = () => {
             value={formData.message}
             onChange={handleChange}
           />
-
-          {/* ERROR */}
           {error && (
             <p
               style={{
                 color: "red",
-                fontSize: "0.9rem",
-                marginBottom: "12px",
+                fontSize: "0.85rem",
+                marginBottom: "10px",
               }}
             >
               ⚠️ {error}
             </p>
           )}
-
-          {/* SUBMIT */}
           <button
             type="submit"
             className={style.formSubmitBtn}
             disabled={loading}
           >
-            {loading
-              ? "Sending..."
-              : "SEND MESSAGE"}
+            {loading ? "Sending..." : "SEND MESSAGE"}
           </button>
+
         </form>
       </div>
     </div>

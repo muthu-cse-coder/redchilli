@@ -244,10 +244,11 @@
             background: #fff;
             padding: 8px 20px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             color: #ff0000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid;
         }
 
         h1 {
@@ -330,7 +331,6 @@
     }
 }
 
-// ─── 2XL SCREENS (1536px and above) ───────────────────────────────────────────
 @media (min-width: 1536px) {
     .dmPageWrapper {
         padding: 100px 8%;
@@ -382,7 +382,6 @@
     }
 }
 
-// ─── TABLET / LAPTOP (max 1024px) ─────────────────────────────────────────────
 @media (max-width: 1024px) {
     .dmPageWrapper {
         padding: 60px 4%;
@@ -424,7 +423,6 @@
     }
 }
 
-// ─── MOBILE LANDSCAPE / SMALL TABLET (max 768px) ──────────────────────────────
 @media (max-width: 768px) {
     .dmPageWrapper {
         padding: 50px 20px;
@@ -480,7 +478,6 @@
     }
 }
 
-// ─── MOBILE PORTRAIT (max 480px) ──────────────────────────────────────────────
 @media (max-width: 480px) {
     .dmPageWrapper {
         padding: 40px 15px;
