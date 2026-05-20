@@ -17,8 +17,7 @@ const ThankYou: FunctionComponent = () => {
         <div className={style.divider}></div>
         
         <p className={style.subtext}>For urgent inquiries, please call us at:</p>
-        <p className={style.phone}>+91  7550188731</p>
-
+        <p className={style.phone}>+91 96591 71935</p>
         <a href="/" className={style.backBtn}>
           BACK TO HOME
         </a>
