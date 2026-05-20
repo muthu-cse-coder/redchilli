@@ -1,20 +1,23 @@
 .stNavBarWrapper {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 80px;
+  height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
-  background: #ff0000;
+  background: linear-gradient(90deg, #c40000, #ff1a1a);
+  backdrop-filter: blur(10px);
   z-index: 9999;
-  transition: 0.3s ease;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 
   &.scrolled {
-    height: 70px;
-    background: rgba(212, 0, 0, 0.98);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: 72px;
+    background: rgba(170, 0, 0, 0.96);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -23,340 +26,94 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  transition: 0.3s ease;
 
-  .logoCircle img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
-
-  .stlogoText {
-    color: white;
-    font-size: 22px;
-    font-weight: 800;
-
-    span {
-      color: #ffd700;
-    }
+  &:hover {
+    transform: scale(1.03);
   }
 }
 
-.stNavBarLinks {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-
-  li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-
-    &:hover {
-      color: #ffd700;
-    }
-  }
-}
-
-.navRight {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.bookButtonWrapper {
-  position: relative;
-}
-
-// .stPurchaseButton {
-//   width: 100%;
-//   background: #ffffff;
-//   color: #FF0000;
-//   border: 2px solid #FF0000;
-//   padding: 14px 20px;
-//   border-radius: 12px;
-//   font-size: 15px;
-//   font-weight: 800;
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   cursor: pointer;
-//   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-//   position: relative;
-//   overflow: hidden;
-// }
-
-// .stPurchaseButton:hover {
-//   background: #FFD700;
-//   color: white;
-//   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-//   transform: translateY(-3px);
-// }
-
-// .stPurchaseButton:active {
-//   transform: translateY(-1px);
-//   background: #D40000;
-// }
-.stPurchaseButton {
-  position: relative;
-  padding: 14px 34px;
-  border: 2px solid #ff2e2e;
-  outline: none;
-  border-radius: 14px;
-  background: #ffffff;
-  color: #ff2e2e;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.35s ease;
-  z-index: 1;
-
+.logoCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
 
-  box-shadow: 0 10px 25px rgba(255, 46, 46, 0.18);
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #ff2e2e;
-    transform: translateX(-100%);
-    transition: transform 0.45s ease;
-    z-index: -1;
-  }
-
-  &:hover::before {
-    transform: translateX(0);
-  }
-
-  &:hover {
-    color: #ffffff;
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(255, 46, 46, 0.3);
-  }
-
-  &:active {
-    transform: scale(0.96);
-  }
-
-  @media (max-width: 768px) {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-}
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  z-index: 10000;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-top: 3px solid #ff0000;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  height: 200px !important;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    right: 20px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #ff0000;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
-.dropdownItem {
-  padding: 12px 16px;
-  color: #333;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-  white-space: normal;
-  word-wrap: break-word;
-  text-align: left;
-  transition: 0.2s ease-in-out;
-  border-bottom: 1px solid #f5f5f5;
-
-  &:hover {
-    background-color: #fff0f0;
-    color: #ff0000;
-    padding-left: 20px;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.stHamburgerButton {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
+.stlogoText {
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  // font-family: "Poppins", sans-serif;
+  font-family: "Myriad Pro", "Segoe UI", Arial, sans-serif;
+  letter-spacing: 1px;
 
   span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
-    border-radius: 2px;
-  }
-
-  &.stHamburgerOpen {
-    span:nth-child(1) {
-      transform: rotate(45deg) translateY(6px) translateX(5px);
-    }
-
-    span:nth-child(2) {
-      opacity: 0;
-    }
-
-    span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-6px) translateX(5px);
-    }
+    color: #ffd000;
   }
 }
 
-.mobileOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  z-index: 9997;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s ease;
 
-  &.overlayVisible {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.stMobileMenu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: white;
-  padding: 100px 25px 40px;
-  transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-  z-index: 9998;
-  overflow-y: auto;
-
-  &.showMenu {
-    right: 0;
-  }
-}
-
-.stMobileNavLinks {
+.stNavBarLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   li {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f5f5f5;
-    padding-bottom: 12px;
-
-    a {
-      color: #222;
-      font-size: 17px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s;
-
-      &:hover {
-        color: #ff0000;
-      }
-    }
+    position: relative;
   }
 
-  .mobileActionItem {
-    border: none;
-    margin-top: 30px;
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
 
-    .mobileBookBtn {
+    &:hover {
+      color: #ffd000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 3px;
+      border-radius: 20px;
+      background: #ffd000;
+      transition: width 0.35s ease;
+    }
+
+    &:hover::after {
       width: 100%;
-      background: #ff0000;
-      color: white;
-      border: none;
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: 800;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
     }
-  }
-}
-
-.mobileSubMenu {
-  .mobileServiceTitle {
-    color: #ff0000;
-    font-weight: 800;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  .mobileServicesList {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.4s ease;
-
-    &.open {
-      max-height: 800px;
-      margin-top: 15px;
-      padding-left: 15px;
-      border-left: 2px solid #ff0000;
-    }
-
-    a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #666;
-      display: block;
-      margin-bottom: 12px;
-      border: none;
-      padding: 0;
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-
-  .stNavBarLinks,
-  .stPurchaseButton {
-    display: none;
-  }
-
-  .stHamburgerButton {
-    display: flex;
   }
 }
 
 .dropdownContainer {
   position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 
   &::after {
     content: "";
@@ -365,32 +122,550 @@
     left: 0;
     width: 100%;
     height: 20px;
+    background: transparent;
   }
 }
 
 .dropdownMenu {
   position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  z-index: 10000;
-  border-radius: 8px;
-  margin-top: 0;
-  border-top: 3px solid #ff0000;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  max-height: 260px;
   overflow-y: auto;
+  background: white;
+  border-radius: 16px;
+  padding: 10px;
+  z-index: 9999;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.25s ease;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d10000;
+    border-radius: 10px;
+  }
+}
+
+.dropdownItem {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  &:hover {
+    background: #fff1f1;
+    color: #d10000;
+    transform: translateX(4px);
+  }
+}
+
+.arrow {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bookButtonWrapper {
+  position: relative;
+}
+
+.stPurchaseButton {
+  background: white;
+  color: #d10000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: #ffd000;
+    color: black;
+    transform: translateY(-2px);
+  }
+}
+
+
+.stHamburgerButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+
+  span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: white;
+    margin: 5px auto;
+    border-radius: 30px;
+    transition: 0.3s ease;
+  }
+}
+
+.stHamburgerOpen {
+  span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 888;
+}
+
+.overlayVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.stMobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: rgb(249, 50, 50);
+  z-index: 9999;
+  transition: 0.35s ease;
+  padding: 100px 24px 30px;
+  overflow-y: auto;
+}
+
+.showMenu {
+  right: 0;
+}
+
+.stMobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  height: 200px !important;
+  gap: 16px;
 
-  &::before {
-    content: "";
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 18px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          transparent,
+          rgba(255, 255, 255, 0.25),
+          transparent);
+      transition: 0.6s;
+    }
+
+    &:hover::before {
+      left: 120%;
+    }
+
+    &:hover {
+      transform: translateX(6px) scale(1.02);
+      background: white;
+      color: #d10000;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.mobileSubMenu {
+  width: 100%;
+}
+
+.mobileServiceTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobileServicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.35s ease;
+  padding-left: 10px;
+
+  a {
+    color: #ffe5e5;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  &.open {
+    max-height: 500px;
+    margin-top: 12px;
+  }
+}
+
+
+.mobileBookBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 40px;
+  border: none;
+  background: white;
+  color: #d10000;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #ffd000;
+    color: black;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+@media (max-width: 992px) {
+
+  .stNavBarLinks,
+  .bookButtonWrapper {
+    display: none;
+  }
+
+  .stHamburgerButton {
+    display: block;
+  }
+
+  .stNavBarWrapper {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stNavBarWrapper {
+    height: 72px;
+    padding: 0 16px;
+  }
+
+  .logoCircle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stlogoText {
+    font-size: 20px;
+  }
+
+  .stMobileMenu {
+    width: 100%;
+  }
+}
+
+
+.mobileCloseBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  span {
     position: absolute;
-    top: -8px;
-    right: 20px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #ff0000;
+    width: 22px;
+    height: 2.5px;
+    background: white;
+    border-radius: 20px;
+    transition: 0.3s ease;
+  }
+
+  span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .mobileCloseBtn {
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    span {
+      width: 20px;
+      height: 2.5px;
+      background: white !important;
+    }
+  }
+}
+
+.stMobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobileSubMenu {
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+
+.mobileSubMenuActive {
+  background: rgba(255,
+      255,
+      255,
+      0.12);
+
+  .mobileServiceTitle {
+    color: #ffd000;
+
+    span {
+      background: white;
+      color: #d10000;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.mobileServiceTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: rgba(255,
+        255,
+        255,
+        0.06);
+  }
+
+  span {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: rgba(255,
+        255,
+        255,
+        0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+  }
+}
+
+
+.mobileServicesList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  padding: 0 14px;
+
+  transition: all 0.4s ease;
+
+  a {
+    text-decoration: none;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 12px 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255,
+        255,
+        255,
+        0.08);
+
+    transition: 0.3s ease;
+
+    &:hover {
+      background: white;
+      color: #d10000;
+      transform: translateX(5px);
+    }
+  }
+
+  &.open {
+    max-height: 600px;
+    padding-bottom: 16px;
+  }
+}
+
+.stMobileNavLinks {
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+
+.mobileBookBtn {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: white;
+  color: #d10000;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+  &:hover {
+    background: #ffd000;
+    color: black;
+    transform: translateY(-2px);
   }
 }

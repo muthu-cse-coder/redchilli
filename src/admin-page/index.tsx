@@ -6,29 +6,29 @@ const AdminPage = () => {
   const [isAnimate, setIsAnimate] = useState(false);
   const [isLocked, setIsLocked] = useState(true);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    const animationTimer = setTimeout(() => {
-      setIsAnimate(true);
-    }, 2000);
-    const unlockTimer = setTimeout(() => {
-      setIsLocked(false);
-      document.body.style.overflow = "auto";
-    }, 3600);
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
+  //   const animationTimer = setTimeout(() => {
+  //     setIsAnimate(true);
+  //   }, 2000);
+  //   const unlockTimer = setTimeout(() => {
+  //     setIsLocked(false);
+  //     document.body.style.overflow = "auto";
+  //   }, 3600);
 
-    return () => {
-      document.body.style.overflow = "auto";
-      clearTimeout(animationTimer);
-      clearTimeout(unlockTimer);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //     clearTimeout(animationTimer);
+  //     clearTimeout(unlockTimer);
+  //   };
+  // }, []);
 
   return (
     <div className={style.stAdminWrapper}>
       <div className={style.stImageContainer}>
         <div className={style.stBaseLayer}>
           <img
-            src="/d0eb82d0-5582-49de-be5a-57dba4d89413.jfif"
+            src="/home-page.png"
             alt="Background"
             className={style.stTruckImg}
           />

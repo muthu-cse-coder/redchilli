@@ -138,6 +138,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 .backBtn {
   display: inline-flex;
   align-items: center;
@@ -152,6 +153,7 @@
   color: #f8f5f5;
   margin-bottom: 25px;
   transition: all 0.3s ease;
+
   &:hover {
     background: #111;
     color: #fff;
