@@ -283,11 +283,12 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        border: 1px solid ;
+        border: 1px solid;
         border-radius: 20px 0 20px 0px;
         border-color: #ff0000;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
@@ -507,6 +508,10 @@
                 }
             }
 
+            // .badge{
+            //     font-size: 30px !important;
+            // }
+            
             .imageWrapper {
                 img {
                     max-width: 110px;

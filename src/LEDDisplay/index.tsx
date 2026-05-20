@@ -8,7 +8,6 @@ const GoldLanding = () => {
         <header>
           <h1>RED CHILLI ADS</h1>
         </header>
-
         <div className={style.textBox}>
           <h2>LED Wall Solutions</h2>
           <ul>
