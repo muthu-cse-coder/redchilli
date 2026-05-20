@@ -98,8 +98,9 @@ const Navbar: FunctionComponent = () => {
         >
           <div className={style.logoCircle}>
             <img
-              src="/Rectangle 4232.png"
+              src="/red-logo.png"
               alt="RedChilli"
+              className="ImageWrapper"
             />
           </div>
 
