@@ -669,3 +669,28 @@
     transform: translateY(-2px);
   }
 }
+@media (max-width: 576px) {
+  .stNavBarWrapper {
+    height: 72px;
+    padding: 0 16px;
+  }
+
+  .logoCircle {
+    width: 42px;
+    height: 42px;
+
+    img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+  }
+
+  .stlogoText {
+    font-size: 20px;
+  }
+
+  .stMobileMenu {
+    width: 100%;
+  }
+}

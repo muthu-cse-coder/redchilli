@@ -73,7 +73,7 @@
 
 .stLockedContent {
   pointer-events: none;
-  opacity: 0.3; // Make it more obvious it's locked
+  opacity: 0.3; 
   transition: opacity 0.8s ease;
 }
 
@@ -83,10 +83,9 @@
   transition: opacity 0.8s ease;
 }
 
-// Mobile responsive
 @media (max-width: 768px) {
   .stTruckImg {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     object-fit: contain;
   }
 }
