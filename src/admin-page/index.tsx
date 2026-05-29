@@ -28,7 +28,7 @@ const AdminPage = () => {
       <div className={style.stImageContainer}>
         <div className={style.stBaseLayer}>
           <img
-            src="public/LED-van.png"
+            src="/LED-van.png"
             alt="Background"
             className={style.stTruckImg}
           />
