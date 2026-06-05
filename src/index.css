@@ -1,25 +1,22 @@
-/* இது எல்லா எலிமெண்ட்டையும் ரீசெட் பண்ணும் */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* இது ரூட் எலிமெண்ட்டில் வரும் எக்ஸ்ட்ரா கேப்பைத் தவிர்க்கும் */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* இது இமேஜ்கள் தேவையில்லாத கேப் உருவாக்குவதைத் தடுக்கும் */
 img {
   display: block;
   max-width: 100%;
 }
-/* index.css or App.css */
 html {
-  scroll-behavior: auto; /* smooth-ஆ இருந்தா இதை மாத்துங்க */
+  scroll-behavior: auto;
 }
 
 * {
